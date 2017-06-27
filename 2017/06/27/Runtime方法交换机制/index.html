@@ -9,13 +9,14 @@
   <title>Runtime方法交换机制 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、运行时所谓运行时，就是说程序在运行(或者在被执行时)的状态，运行时对于项目编程来说是一个必要重要的机制，能够帮我们处理很多未知的情况，比如说动态创建类、添加属性、方法等。 二、运用领域 在程序运行时，动态创建一个类 在程序运行时，动态为某类添加属性、方法，修改属性值、方法名称 。。。  三、这里简单说一下方法交换机制比如说一个工程里面，你们会使用很多系统控件，比如说UIButton，假设有一个">
+<meta name="keywords" content="iOS,Runtime">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Runtime方法交换机制">
 <meta property="og:url" content="http://blogs.com/2017/06/27/Runtime方法交换机制/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一、运行时所谓运行时，就是说程序在运行(或者在被执行时)的状态，运行时对于项目编程来说是一个必要重要的机制，能够帮我们处理很多未知的情况，比如说动态创建类、添加属性、方法等。 二、运用领域 在程序运行时，动态创建一个类 在程序运行时，动态为某类添加属性、方法，修改属性值、方法名称 。。。  三、这里简单说一下方法交换机制比如说一个工程里面，你们会使用很多系统控件，比如说UIButton，假设有一个">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-ab04505e35a95669.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2017-06-27T03:39:33.000Z">
+<meta property="og:updated_time" content="2017-06-27T05:06:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Runtime方法交换机制">
 <meta name="twitter:description" content="一、运行时所谓运行时，就是说程序在运行(或者在被执行时)的状态，运行时对于项目编程来说是一个必要重要的机制，能够帮我们处理很多未知的情况，比如说动态创建类、添加属性、方法等。 二、运用领域 在程序运行时，动态创建一个类 在程序运行时，动态为某类添加属性、方法，修改属性值、方法名称 。。。  三、这里简单说一下方法交换机制比如说一个工程里面，你们会使用很多系统控件，比如说UIButton，假设有一个">
@@ -88,9 +89,9 @@
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
 			</div>
 		</nav>
@@ -131,9 +132,9 @@
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
 				</div>
 			</nav>
@@ -219,6 +220,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Runtime</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -391,6 +407,30 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Cocoapod</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">私有库</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -472,7 +512,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">日积月累, 聚沙成塔,集腋成裘 ,积少成多,积水成渊。</div>
   	  	
     	</section>
     

@@ -9,6 +9,7 @@
   <title>创建属于自己的私有库 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="相信每个Developer都会在使用Cocoapods这儿第三方库管理工具，虽然有时候pod install的时候会有种想死的感觉o(╯□╰)o，但依然无法阻挡某些程序员去使用它的热情，why？因为它能使你的项目工程看起来更加简洁，更加有条理性，而不至于使自己项目的Vendor文件夹看起来臃肿，而且能减少手动导入静态framework的麻烦，也可以将自己封装好的代码提交到Trunk供自己和别人使用">
+<meta name="keywords" content="Cocoapod,私有库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建属于自己的私有库">
 <meta property="og:url" content="http://blogs.com/2017/06/27/创建属于自己的私有库/index.html">
@@ -20,7 +21,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-12e0e5035fcfa0d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fgziq673rjj30hx02cjri.jpg">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-a0acab8a91311285.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-06-27T03:36:36.000Z">
+<meta property="og:updated_time" content="2017-06-27T05:06:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建属于自己的私有库">
 <meta name="twitter:description" content="相信每个Developer都会在使用Cocoapods这儿第三方库管理工具，虽然有时候pod install的时候会有种想死的感觉o(╯□╰)o，但依然无法阻挡某些程序员去使用它的热情，why？因为它能使你的项目工程看起来更加简洁，更加有条理性，而不至于使自己项目的Vendor文件夹看起来臃肿，而且能减少手动导入静态framework的麻烦，也可以将自己封装好的代码提交到Trunk供自己和别人使用">
@@ -93,9 +94,9 @@
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
 			</div>
 		</nav>
@@ -136,9 +137,9 @@
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
 				</div>
 			</nav>
@@ -304,6 +305,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cocoapod</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">私有库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -485,6 +501,30 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Cocoapod</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">私有库</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -566,7 +606,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">日积月累, 聚沙成塔,集腋成裘 ,积少成多,积水成渊。</div>
   	  	
     	</section>
     
