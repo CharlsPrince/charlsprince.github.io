@@ -80,11 +80,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/CharlsPrince" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-		        
-					<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/4ae4da25321e" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
 			</div>
 		</nav>
@@ -123,11 +119,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/CharlsPrince" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-			        
-						<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/4ae4da25321e" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
 				</div>
 			</nav>
@@ -154,6 +146,138 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-使用 plugman 创建Cordova插件-iOS为例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/28/使用 plugman 创建Cordova插件-iOS为例/">使用 plugman 创建Cordova插件-iOS为例</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/28/使用 plugman 创建Cordova插件-iOS为例/" class="archive-article-date">
+  	<time datetime="2017-06-28T13:59:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>安装 <a href="http://nodejs.cn/" target="_blank" rel="external">node.js</a> 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。</li>
+</ol>
+<p>npm 安装完成了以后可以执行 <code>npm -v</code> 验证下是否安装成功<br><img src="http://upload-images.jianshu.io/upload_images/2925367-b9603e835d314770.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="npm 安装成功"></p>
+<ol>
+<li>安装 plugman (全局安装)</li>
+</ol>
+<blockquote>
+<p>npm install -g plugman</p>
+</blockquote>
+<p>一般安装完成会出现这样的界面:<br><img src="http://upload-images.jianshu.io/upload_images/2925367-dbb4d5fb943e1379.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="plugman 安装完成"></p>
+<p>安装完可以执行 <code>plugman -v</code> 验证下是否安装成功<br>如安装成功: </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2925367-9efd0c08ff00c125.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="plugman 安装成功"></p>
+<h5 id="到这一步基本准备工作已完成，下面就可以开始开发你的插件了。"><a href="#到这一步基本准备工作已完成，下面就可以开始开发你的插件了。" class="headerlink" title="到这一步基本准备工作已完成，下面就可以开始开发你的插件了。"></a>到这一步基本准备工作已完成，下面就可以开始开发你的插件了。</h5><h2 id="创建插件"><a href="#创建插件" class="headerlink" title="创建插件"></a>创建插件</h2><h3 id="1-cd-lt-到你需要存放插件的地方-gt"><a href="#1-cd-lt-到你需要存放插件的地方-gt" class="headerlink" title="1. cd &lt;到你需要存放插件的地方&gt;"></a>1. cd &lt;到你需要存放插件的地方&gt;</h3><p> 为了方便找到和演示，我直接在桌面创建了一个MyPlugins的文件夹, 这一步可以省略，至于为什么，请看第二步就明白了。</p>
+<p> <img src="http://upload-images.jianshu.io/upload_images/2925367-f16b19b3f191a00f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="插件存放文件夹"></p>
+<h3 id="2-执行一下命令创建插件"><a href="#2-执行一下命令创建插件" class="headerlink" title="2. 执行一下命令创建插件"></a>2. 执行一下命令创建插件</h3><p> 以 <code>MyPlugin</code> 为例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plugman create --name &lt;pluginName&gt; --plugin_id &lt;pluginID&gt; --plugin_version &lt;version&gt; [--path &lt;directory&gt;] [--variableNAME=VALUE]</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">参数:</div><div class="line">pluginName: 插件名字</div><div class="line">pluginID: 插件id, egg : coolPlugin </div><div class="line">oversion: 版本, egg : 0.0.1</div><div class="line">directory:一个绝对或相对路径的目录，该目录将创建插件项目</div><div class="line">variable NAME=VALUE: 额外的描述，如作者信息和相关描述</div><div class="line"></div><div class="line">egg : plugman create --name MyPlugin --plugin_id com.charls.MyPlugin --plugin_version 0.0.1</div></pre></td></tr></table></figure>
+<p>创建成功以后MyPlugins文件夹下会出现一个MyPlugin的文件夹:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2925367-97b40f59672f3e32.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="插件创建成功"></p>
+<p>文件结构目录如下:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2925367-ade221c02ba54734.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="插件文件目录"></p>
+<h3 id="3-为插件添加支持平台"><a href="#3-为插件添加支持平台" class="headerlink" title="3. 为插件添加支持平台"></a>3. 为插件添加支持平台</h3><ul>
+<li>cd 到你的插件根目录</li>
+<li>执行一下命令:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugman platform add --platform_name &lt;platform&gt;</div><div class="line">egg : plugman platform add --platform_name ios</div></pre></td></tr></table></figure>
+<p>你会发现这个时候插件的目录发生了变化:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2925367-5b7701bf5824f71f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加了支持平台的目录结构"></p>
+<ul>
+<li>.m 文件当然就是你实现功能的原生代码</li>
+<li>.js 文件就是开放给前端js调用的接口代码</li>
+</ul>
+<h3 id="4-编写你的插件实现功能"><a href="#4-编写你的插件实现功能" class="headerlink" title="4. 编写你的插件实现功能"></a>4. 编写你的插件实现功能</h3><p>打开 MyPlugin.m 文件，编写一下代码；</p>
+<p>或者根据你的喜欢写自己的功能，因为单个文件不好编辑，所以你也可以先在一个demo中编辑功能代码并测试功能是否有效。</p>
+<p>不过对js开发的类一定要继承<code>CDVPlugin</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">/********* MyPlugin.m Cordova Plugin Implementation *******/</div><div class="line"></div><div class="line">#import &lt;Cordova/CDV.h&gt;</div><div class="line"></div><div class="line">@interface MyPlugin : CDVPlugin &#123;</div><div class="line">  // Member variables go here.</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)coolMethod:(CDVInvokedUrlCommand*)command;</div><div class="line">@end</div><div class="line"></div><div class="line">@implementation MyPlugin</div><div class="line"></div><div class="line">- (void)coolMethod:(CDVInvokedUrlCommand*)command</div><div class="line">&#123;</div><div class="line"></div><div class="line">    [self showAlert];</div><div class="line"></div><div class="line">    CDVPluginResult* pluginResult = nil;</div><div class="line">    NSString* echo = [command.arguments objectAtIndex:0];</div><div class="line"></div><div class="line">    if (echo != nil &amp;&amp; [echo length] &gt; 0) &#123;</div><div class="line">        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];</div><div class="line">    &#125; else &#123;</div><div class="line">        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)showAlert &#123;</div><div class="line">    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@&quot;提示&quot; message:@&quot;恭喜你，调用插件成功了!&quot; preferredStyle:UIAlertControllerStyleAlert];</div><div class="line">    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&quot;取消&quot; style:UIAlertActionStyleCancel handler:nil];</div><div class="line">    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@&quot;确定&quot; style:UIAlertActionStyleDefault handler:nil];</div><div class="line">    [alert addAction:cancelAction];</div><div class="line">    [alert addAction:sureAction];</div><div class="line">    [self.viewController presentViewController:alert animated:YES completion:nil];</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<h3 id="5-创建package-json文件"><a href="#5-创建package-json文件" class="headerlink" title="5. 创建package.json文件"></a>5. 创建package.json文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugman createpackagejson &lt;directory&gt;</div><div class="line">egg: plugman createpackagejson</div></pre></td></tr></table></figure>
+<p>然后需要你根据提示填写相关的内容，最后生成一个这个插件的描述信息文件。</p>
+<p>如图: 最后，输入<code>yes</code>就行了</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2925367-6dd4b341efd6a3e9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建package.json文件"></p>
+<h3 id="6-注意项"><a href="#6-注意项" class="headerlink" title="6. 注意项"></a>6. 注意项</h3><hr>
+<p>基本到了这一步，一个简单的插件已经创建完了, 下面就是验证工作了。</p>
+<p>不过，还有些地方应该注意的。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2925367-d049b9a15572f7fc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="plug.xml"></p>
+<ul>
+<li><code>clobbers</code> 中的 <code>target</code> 限制了你如何调用插件</li>
+<li><code>config-file</code> 中的内容会被配置到工程的<code>config.xml</code>中</li>
+<li><code>source-file</code> 指定了插件的路径</li>
+</ul>
+<h2 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h2><p>新建或打开一个cordova项目,然后执行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cordova plugin add &lt;你的插件(名称\路径\git地址)&gt;</div><div class="line">egg: cordova plugin add /Users/charls/Desktop/MyPlugins/MyPlugin</div></pre></td></tr></table></figure>
+<p>新增iOS平台</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cordova platform add ios --save</div></pre></td></tr></table></figure>
+<p>如果不出意外的话:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2925367-90f671cc77e43ee7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="插件安装成功"></p>
+<p>再看看工程中的plugins目录是否存在这个插件</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2925367-f3fa5458e6274cec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="插件安装成功plugins"></p>
+<p>修改index.html 和 index.js</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2925367-4dfcbc3c3fc7c8fd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改index.html"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2925367-517dbbb270f40ee2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改index.js"></p>
+<p>然后执行:<br>cordova run ios</p>
+<p>最后运行效果:<br><img src="http://upload-images.jianshu.io/upload_images/2925367-65b71ee91749bf77.gif?imageMogr2/auto-orient/strip" alt="运行效果"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">混合开发</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cordova</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">自定义插件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/28/使用 plugman 创建Cordova插件-iOS为例/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
   
     <article id="post-Runtime方法交换机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -734,6 +858,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
               </li>
              
               <li class="article-tag-list-item">
