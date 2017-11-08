@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://charlsPrince.com">
   <title>使用 plugman 创建Cordova插件-iOS为例 | Charls&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="准备工作 安装 node.js 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。  npm 安装完成了以后可以执行 npm -v 验证下是否安装成功  安装 plugman (全局安装)   npm install -g plugman  一般安装完成会出现这样的界面: 安装完可以执行 plugman -v 验证下是">
+  <meta name="description" content="准备工作 安装 node.js 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。">
 <meta name="keywords" content="iOS,混合开发,Cordova,自定义插件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 plugman 创建Cordova插件-iOS为例">
 <meta property="og:url" content="http://charlsPrince.com/2017/06/28/使用 plugman 创建Cordova插件-iOS为例/index.html">
 <meta property="og:site_name" content="Charls&#39;s Blogs">
-<meta property="og:description" content="准备工作 安装 node.js 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。  npm 安装完成了以后可以执行 npm -v 验证下是否安装成功  安装 plugman (全局安装)   npm install -g plugman  一般安装完成会出现这样的界面: 安装完可以执行 plugman -v 验证下是">
+<meta property="og:description" content="准备工作 安装 node.js 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-b9603e835d314770.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-dbb4d5fb943e1379.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-9efd0c08ff00c125.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -29,10 +29,10 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-4dfcbc3c3fc7c8fd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-517dbbb270f40ee2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-65b71ee91749bf77.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2017-07-25T09:40:35.000Z">
+<meta property="og:updated_time" content="2017-11-08T09:33:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 plugman 创建Cordova插件-iOS为例">
-<meta name="twitter:description" content="准备工作 安装 node.js 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。  npm 安装完成了以后可以执行 npm -v 验证下是否安装成功  安装 plugman (全局安装)   npm install -g plugman  一般安装完成会出现这样的界面: 安装完可以执行 plugman -v 验证下是">
+<meta name="twitter:description" content="准备工作 安装 node.js 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2925367-b9603e835d314770.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Charls&#39;s Blogs" type="application/atom+xml">
@@ -192,6 +192,7 @@
         <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
 <li>安装 <a href="http://nodejs.cn/" target="_blank" rel="external">node.js</a> 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。</li>
 </ol>
+<a id="more"></a>
 <p>npm 安装完成了以后可以执行 <code>npm -v</code> 验证下是否安装成功<br><img src="http://upload-images.jianshu.io/upload_images/2925367-b9603e835d314770.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="npm 安装成功"></p>
 <ol>
 <li>安装 plugman (全局安装)</li>
@@ -202,7 +203,6 @@
 <p>一般安装完成会出现这样的界面:<br><img src="http://upload-images.jianshu.io/upload_images/2925367-dbb4d5fb943e1379.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="plugman 安装完成"></p>
 <p>安装完可以执行 <code>plugman -v</code> 验证下是否安装成功<br>如安装成功: </p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2925367-9efd0c08ff00c125.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="plugman 安装成功"></p>
-<a id="more"></a>
 <h5 id="到这一步基本准备工作已完成，下面就可以开始开发你的插件了。"><a href="#到这一步基本准备工作已完成，下面就可以开始开发你的插件了。" class="headerlink" title="到这一步基本准备工作已完成，下面就可以开始开发你的插件了。"></a>到这一步基本准备工作已完成，下面就可以开始开发你的插件了。</h5><h2 id="创建插件"><a href="#创建插件" class="headerlink" title="创建插件"></a>创建插件</h2><h3 id="1-cd-lt-到你需要存放插件的地方-gt"><a href="#1-cd-lt-到你需要存放插件的地方-gt" class="headerlink" title="1. cd &lt;到你需要存放插件的地方&gt;"></a>1. cd &lt;到你需要存放插件的地方&gt;</h3><p> 为了方便找到和演示，我直接在桌面创建了一个MyPlugins的文件夹, 这一步可以省略，至于为什么，请看第二步就明白了。</p>
 <p> <img src="http://upload-images.jianshu.io/upload_images/2925367-f16b19b3f191a00f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="插件存放文件夹"></p>
 <h3 id="2-执行一下命令创建插件"><a href="#2-执行一下命令创建插件" class="headerlink" title="2. 执行一下命令创建插件"></a>2. 执行一下命令创建插件</h3><p> 以 <code>MyPlugin</code> 为例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plugman create --name &lt;pluginName&gt; --plugin_id &lt;pluginID&gt; --plugin_version &lt;version&gt; [--path &lt;directory&gt;] [--variableNAME=VALUE]</div></pre></td></tr></table></figure></p>
@@ -504,15 +504,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cocoapod</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">私有库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
               </li>
              
               <li class="article-tag-list-item">

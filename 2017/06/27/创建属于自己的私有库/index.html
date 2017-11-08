@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-12e0e5035fcfa0d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fgziq673rjj30hx02cjri.jpg">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-a0acab8a91311285.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-07-25T09:40:43.000Z">
+<meta property="og:updated_time" content="2017-11-08T09:33:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建属于自己的私有库">
 <meta name="twitter:description" content="相信每个Developer都会在使用Cocoapods这儿第三方库管理工具，虽然有时候pod install的时候会有种想死的感觉o(╯□╰)o，但依然无法阻挡某些程序员去使用它的热情，why？因为它能使你的项目工程看起来更加简洁，更加有条理性，而不至于使自己项目的Vendor文件夹看起来臃肿，而且能减少手动导入静态framework的麻烦，也可以将自己封装好的代码提交到Trunk供自己和别人使用">
@@ -182,6 +182,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>相信每个Developer都会在使用Cocoapods这儿第三方库管理工具，虽然有时候pod install的时候会有种想死的感觉o(╯□╰)o，但依然无法阻挡某些程序员去使用它的热情，why？因为它能使你的项目工程看起来更加简洁，更加有条理性，而不至于使自己项目的Vendor文件夹看起来臃肿，而且能减少手动导入静态framework的麻烦，也可以将自己封装好的代码提交到Trunk供自己和别人使用，的确方便。</p>
+ <a id="more"></a>
 <p>但有时候我们将代码封装起来后，想要重复利用，又不想push到Trunk(毕竟在又要验证又要被墙什么的，麻烦)，这时就需要使用到私有库了，作为小白和英语四级都没过的“程序猿”，在Cocoapods上的确踩了不少的坑，而且Cocoapods官网上面的流程看起来比较官方，只把一些主要的步骤标记出来，根本就没有一个完成的流程，而且全英文，看起来有点吃力(毕竟我是中国人O(∩_∩)O~)</p>
 <p>那么我们就不扯远了，什么是私有库？</p>
 <h2 id="私有库及公有库理解"><a href="#私有库及公有库理解" class="headerlink" title="私有库及公有库理解"></a>私有库及公有库理解</h2><blockquote>
@@ -190,7 +191,6 @@
 <h2 id="Cocoapods的原理及目录结构"><a href="#Cocoapods的原理及目录结构" class="headerlink" title="Cocoapods的原理及目录结构"></a>Cocoapods的原理及目录结构</h2><blockquote>
 <p>Cocoapods一共分成两块，就是<a href="https://github.com/CocoaPods/CocoaPods" target="_blank" rel="external">Cocoapods</a>和<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="external">Specs</a>,Specs是一个目录容器，将所有的第三方的podspec存放在这里，而podspec就相当于是这个库的介绍文件，里面包含了库的名字、版本、下载地址等信息</p>
 </blockquote>
- <a id="more"></a>
 <h3 id="注意项"><a href="#注意项" class="headerlink" title="注意项"></a>注意项</h3><ul>
 <li>~/.cocoapods/repos/master</li>
 </ul>
@@ -516,15 +516,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cocoapod</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">私有库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
               </li>
              
               <li class="article-tag-list-item">

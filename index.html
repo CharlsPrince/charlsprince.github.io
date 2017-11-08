@@ -175,9 +175,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Button-按钮"><a href="#Button-按钮" class="headerlink" title="Button 按钮"></a>Button 按钮</h2><p>常用的操作按钮。</p>
-<h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><p>基础的按钮用法。</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fhut3w8gqqj30at02wjrl.jpg" alt="基础用法"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;sgs-button @click=&quot;buttonClickedBack()&quot; type=&quot;default&quot;&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;primary&quot;&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;info&quot;&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;success&quot;&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;warning&quot;&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;danger&quot;&gt;&lt;/sgs-button&gt;</div></pre></td></tr></table></figure>
+<h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3>
         
           <a class="article-more-a" href="/2017/07/25/自定义Vue2.0组件/#more">more >></a>
         
@@ -245,16 +243,6 @@
         <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
 <li>安装 <a href="http://nodejs.cn/" target="_blank" rel="external">node.js</a> 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。</li>
 </ol>
-<p>npm 安装完成了以后可以执行 <code>npm -v</code> 验证下是否安装成功<br><img src="http://upload-images.jianshu.io/upload_images/2925367-b9603e835d314770.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="npm 安装成功"></p>
-<ol>
-<li>安装 plugman (全局安装)</li>
-</ol>
-<blockquote>
-<p>npm install -g plugman</p>
-</blockquote>
-<p>一般安装完成会出现这样的界面:<br><img src="http://upload-images.jianshu.io/upload_images/2925367-dbb4d5fb943e1379.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="plugman 安装完成"></p>
-<p>安装完可以执行 <code>plugman -v</code> 验证下是否安装成功<br>如安装成功: </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2925367-9efd0c08ff00c125.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="plugman 安装成功"></p>
         
           <a class="article-more-a" href="/2017/06/28/使用 plugman 创建Cordova插件-iOS为例/#more">more >></a>
         
@@ -328,12 +316,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="一、运行时"><a href="#一、运行时" class="headerlink" title="一、运行时"></a>一、运行时</h3><p>所谓运行时，就是说程序在运行(或者在被执行时)的状态，运行时对于项目编程来说是一个必要重要的机制，能够帮我们处理很多未知的情况，比如说动态创建类、添加属性、方法等。</p>
-<h3 id="二、运用领域"><a href="#二、运用领域" class="headerlink" title="二、运用领域"></a>二、运用领域</h3><ul>
-<li>在程序运行时，动态创建一个类</li>
-<li>在程序运行时，动态为某类添加属性、方法，修改属性值、方法名称</li>
-<li>。。。</li>
-</ul>
-<h3 id="三、这里简单说一下方法交换机制"><a href="#三、这里简单说一下方法交换机制" class="headerlink" title="三、这里简单说一下方法交换机制"></a>三、这里简单说一下方法交换机制</h3><p>比如说一个工程里面，你们会使用很多系统控件，比如说UIButton，假设有一个需求说要将所有的button的点击标题颜色改成其他的颜色，难道你要一个一个去修改？估计你会想死的心都有，那怎么办？方法交换机制可以帮到你,</p>
         
           <a class="article-more-a" href="/2017/06/27/Runtime方法交换机制/#more">more >></a>
         
@@ -399,14 +381,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>相信每个Developer都会在使用Cocoapods这儿第三方库管理工具，虽然有时候pod install的时候会有种想死的感觉o(╯□╰)o，但依然无法阻挡某些程序员去使用它的热情，why？因为它能使你的项目工程看起来更加简洁，更加有条理性，而不至于使自己项目的Vendor文件夹看起来臃肿，而且能减少手动导入静态framework的麻烦，也可以将自己封装好的代码提交到Trunk供自己和别人使用，的确方便。</p>
-<p>但有时候我们将代码封装起来后，想要重复利用，又不想push到Trunk(毕竟在又要验证又要被墙什么的，麻烦)，这时就需要使用到私有库了，作为小白和英语四级都没过的“程序猿”，在Cocoapods上的确踩了不少的坑，而且Cocoapods官网上面的流程看起来比较官方，只把一些主要的步骤标记出来，根本就没有一个完成的流程，而且全英文，看起来有点吃力(毕竟我是中国人O(∩_∩)O~)</p>
-<p>那么我们就不扯远了，什么是私有库？</p>
-<h2 id="私有库及公有库理解"><a href="#私有库及公有库理解" class="headerlink" title="私有库及公有库理解"></a>私有库及公有库理解</h2><blockquote>
-<p>在我看来，私有库就是自己封装的Code放到不开源的代码仓库，而GitHub就是一个管理开源Code的代码仓库，相信很多同学都是通过在GitHub上开源自己封装好的组件的，毕竟有好东西要学会分享✧(≖ ◡ ≖✿)嘿嘿</p>
-</blockquote>
-<h2 id="Cocoapods的原理及目录结构"><a href="#Cocoapods的原理及目录结构" class="headerlink" title="Cocoapods的原理及目录结构"></a>Cocoapods的原理及目录结构</h2><blockquote>
-<p>Cocoapods一共分成两块，就是<a href="https://github.com/CocoaPods/CocoaPods" target="_blank" rel="external">Cocoapods</a>和<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="external">Specs</a>,Specs是一个目录容器，将所有的第三方的podspec存放在这里，而podspec就相当于是这个库的介绍文件，里面包含了库的名字、版本、下载地址等信息</p>
-</blockquote>
         
           <a class="article-more-a" href="/2017/06/27/创建属于自己的私有库/#more">more >></a>
         
@@ -476,17 +450,6 @@
 <li>(可选)下载和安装git client, 如果你没有。安装成功后，你可以在命令行中使用git。 这个命令行使用下载git仓库中的资源。</li>
 <li>安装cordova 模块使用Nodejs的npm工具。cordova模块会被npm工具自动下载。</li>
 </ol>
-<ul>
-<li>在OS X和Linux上:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g cordova</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>在OS X和Linux上, npm命令加上前缀sudo因为cordova可能需要安装在其他的受限制目录比如 /usr/local/share。如果你使用可选工具nvm/nave或者具有安装目录的写权限，那么你可以省略sudo前缀。这里有更多提示 可用在使用 npm 没有 sudo前缀时，如果你想那么做。</p>
-<ul>
-<li>在Windows上:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:\&gt;npm install -g cordova</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><code>-g</code> 标志是告诉 <code>npm</code> 我们全局安装 <code>cordova</code>。否则我们将会安装在当前工作目录的 <code>node_modules</code> 子目录。</p>
-<p>安装完成后，你应该能够在命令行中运行<code>cordova</code>命令，在没有任何参数的时候会打印一些帮助信息。</p>
         
           <a class="article-more-a" href="/2017/06/23/Cordova概要/#more">more >></a>
         
@@ -643,15 +606,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cocoapod</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">私有库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
               </li>
              
               <li class="article-tag-list-item">
