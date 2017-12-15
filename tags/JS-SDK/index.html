@@ -6,24 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://charlsPrince.com">
-  <title>自定义Vue2.0组件 | Charls&#39;s Blogs</title>
+  <title>Tag: JS-SDK | Charls&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Button 按钮常用的操作按钮。 基础用法">
-<meta name="keywords" content="Vue,Button">
-<meta property="og:type" content="article">
-<meta property="og:title" content="自定义Vue2.0组件">
-<meta property="og:url" content="http://charlsPrince.com/2017/07/25/自定义Vue2.0组件/index.html">
+  <meta name="description" content="人生的道路太难走，太多坎坷，是男人，就挺着胸膛走过去。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Charls&#39;s Blogs">
+<meta property="og:url" content="http://charlsPrince.com/tags/JS-SDK/index.html">
 <meta property="og:site_name" content="Charls&#39;s Blogs">
-<meta property="og:description" content="Button 按钮常用的操作按钮。 基础用法">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fhut3w8gqqj30at02wjrl.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fhut6gx9acj302905ojrc.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fhut7xa8dsj30ky03x74r.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fhut94bg04j30kt04174k.jpg">
-<meta property="og:updated_time" content="2017-11-08T09:34:35.000Z">
+<meta property="og:description" content="人生的道路太难走，太多坎坷，是男人，就挺着胸膛走过去。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自定义Vue2.0组件">
-<meta name="twitter:description" content="Button 按钮常用的操作按钮。 基础用法">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fhut3w8gqqj30at02wjrl.jpg">
+<meta name="twitter:title" content="Charls&#39;s Blogs">
+<meta name="twitter:description" content="人生的道路太难走，太多坎坷，是男人，就挺着胸膛走过去。">
   
     <link rel="alternative" href="/atom.xml" title="Charls&#39;s Blogs" type="application/atom+xml">
   
@@ -159,229 +152,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-自定义Vue2.0组件" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      自定义Vue2.0组件
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/12/15/JS-SDK调试/" class="archive-article-date">
+  	<time datetime="2017-12-15T03:19:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/12/15/JS-SDK调试/">JS-SDK调试</a>
     </h1>
   
 
-        
-        <a href="/2017/07/25/自定义Vue2.0组件/" class="archive-article-date">
-  	<time datetime="2017-07-25T01:03:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Button-按钮"><a href="#Button-按钮" class="headerlink" title="Button 按钮"></a>Button 按钮</h2><p>常用的操作按钮。</p>
-<h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><a id="more"></a>
-<p>基础的按钮用法。</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fhut3w8gqqj30at02wjrl.jpg" alt="基础用法"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;sgs-button @click=&quot;buttonClickedBack()&quot; type=&quot;default&quot;&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;primary&quot;&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;info&quot;&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;success&quot;&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;warning&quot;&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;danger&quot;&gt;&lt;/sgs-button&gt;</div></pre></td></tr></table></figure>
-<h3 id="禁用状态"><a href="#禁用状态" class="headerlink" title="禁用状态"></a>禁用状态</h3><p>按钮禁用状态</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fhut6gx9acj302905ojrc.jpg" alt="禁用状态"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; type=&quot;danger&quot; disabled&gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; plain type=&quot;danger&quot; disabled&gt;&lt;/sgs-button&gt;</div></pre></td></tr></table></figure>
-<h3 id="带图标的按钮"><a href="#带图标的按钮" class="headerlink" title="带图标的按钮"></a>带图标的按钮</h3><p>让按钮不仅是文字</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fhut7xa8dsj30ky03x74r.jpg" alt="带图标按钮"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;left&quot; type=&quot;default&quot;  &gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;left&quot; type=&quot;primary&quot;  &gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;left&quot; type=&quot;info&quot;  &gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;left&quot; type=&quot;success&quot;  &gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;left&quot; type=&quot;warning&quot;  &gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;left&quot; type=&quot;danger&quot;  &gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;left&quot;</div></pre></td></tr></table></figure>
-<h3 id="设置按钮方向"><a href="#设置按钮方向" class="headerlink" title="设置按钮方向"></a>设置按钮方向</h3><p>移动端的按钮图标的方向通常都是不定的</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fhut94bg04j30kt04174k.jpg" alt="按钮方向"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;left&quot; type=&quot;default&quot;  &gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;top&quot; type=&quot;primary&quot;  &gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;right&quot; type=&quot;info&quot;  &gt;&lt;/sgs-button&gt;</div><div class="line">&lt;sgs-button @click=&quot;buttonClicked()&quot; icon=&quot;arrow-with-circle-down&quot; iconPosition=&quot;bottom&quot;</div></pre></td></tr></table></figure>
-<h3 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-<th>类型</th>
-<th>可选值</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>类型</td>
-<td>string</td>
-<td>primary &amp; info &amp; success &amp; warning &amp; danger &amp; default</td>
-<td>default</td>
-</tr>
-<tr>
-<td>icon</td>
-<td>图标，已有的图标库中的图标名</td>
-<td>string</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>iconPosition</td>
-<td>图标方向</td>
-<td>string</td>
-<td>left &amp; right &amp; top &amp; bottom</td>
-<td>left</td>
-</tr>
-<tr>
-<td>plain</td>
-<td>是否朴素按钮</td>
-<td>Boolean</td>
-<td>-</td>
-<td>false</td>
-</tr>
-<tr>
-<td>disabled</td>
-<td>是否禁用状态</td>
-<td>Boolean</td>
-<td>-</td>
-<td>false</td>
-</tr>
-</tbody>
-</table>
-<h3 id="使用姿势"><a href="#使用姿势" class="headerlink" title="使用姿势"></a>使用姿势</h3><h4 id="全局使用"><a href="#全局使用" class="headerlink" title="全局使用"></a>全局使用</h4><p>在main.js中添加一下代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import SGSButton from &apos;./packages/buttons/button&apos;</div><div class="line">Vue.use(SGSButton)</div></pre></td></tr></table></figure>
-<h4 id="局部使用"><a href="#局部使用" class="headerlink" title="局部使用"></a>局部使用</h4><p>在需要使用的组件里引入并注册:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import SgsButton from &apos;../packages/buttons/button&apos;</div><div class="line">	export default &#123;</div><div class="line">		components: &#123;</div><div class="line">			SgsButton</div><div class="line">		&#125;,</div></pre></td></tr></table></figure>
-<p><a href="https://git.oschina.net/charls/vue-southgis-components.git" target="_blank" rel="external">源码请拽我</a></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信公众号</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Button</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JS-SDK</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://charlsPrince.com/2017/07/25/自定义Vue2.0组件/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/12/15/JS-SDK调试/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JS-SDK调试
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/06/28/使用 plugman 创建Cordova插件-iOS为例/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用 plugman 创建Cordova插件-iOS为例</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -404,9 +232,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

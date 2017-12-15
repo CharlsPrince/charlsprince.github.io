@@ -154,6 +154,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS-SDK调试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/15/JS-SDK调试/">JS-SDK调试</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/15/JS-SDK调试/" class="archive-article-date">
+  	<time datetime="2017-12-15T03:19:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>1、登录微信公众平台并打开在线接口调试工具和公众平台测试账号。</p>
+<p>2、打开公众平台测试账号，里面有一栏叫JS接口安全域名的，点击修改，将里面的域名填写为你将要放置的js-sdk域名，这么说，可能有点抽象，就是说这里填写的域名其实就是你站点的域名:(==关键！！！==)</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fmh8bf2s7xj30no05n0tc.jpg" alt="安全域名配置"></p>
+<p>3、打开在线调试工具，选择接口类型为基础类型，接口列表为获取<code>access_token接口/token</code>,并填入测试公众号的<code>appid</code>、<code>secret</code>,然后点击检查问题获取到<code>access_token</code></p>
+<p>4、获取到<code>access_token</code>后，使用postman请求以下接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=(填入上面获取到的access_token)&amp;type=jsapi</div></pre></td></tr></table></figure>
+<p>则会得到ticket</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fmh74u20x1j30mc0d0ta7.jpg" alt="获取ticket"></p>
+<p>5、拿到了ticket则可以通过<a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="external">sha1加密</a>去获取签名了</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fmh7uh8mm9j30om06j0tv.jpg" alt="获取签名"></p>
+<p>仔细看一下，你会发现jsapi_ticket中间多了个<code>\</code>，其实这个<code>\</code>是不需要的，要去掉在进行加密，明文中包含了几个参数，其中appid就不多说了，测试公众号的appid；timestamp表示生成签名的时间戳，nonceStr代表随机字符串，这两个参数在测试阶段都可以随意填写，正式环境最好还是在后台服务器中使用代码生成。</p>
+<p>6、来到这里基本就差不多了，这时你需要一个测试的demo工程，将配置需要使用到的参数配置进去：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fmh85m5c65j30fl08b3zq.jpg" alt="配置参数"></p>
+<p>去到微信开发者工具，输入你demo的运行路径，</p>
+<h3 id="如果出现："><a href="#如果出现：" class="headerlink" title="如果出现："></a>如果出现：</h3><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fmh897qpvlj30gl05kgm4.jpg" alt="签名失效"></p>
+<p>一般都是签名不正确导致的，请检查，是否那个步骤有错，实在不行，也可以重新执行2-5步骤</p>
+<h3 id="如果出现：-1"><a href="#如果出现：-1" class="headerlink" title="如果出现："></a>如果出现：</h3><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fmh8fxwq80j30fs05umxn.jpg" alt="不可用域名"></p>
+<p>这个情况是js接口安全域名，跟你js-sdk所在的域，不是同一个域，打开公众号测试账号看看:</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fmh8jmhfvaj308j04hmxe.jpg" alt="安全域名"></p>
+<p>对比下两个域，就会发现问题。</p>
+<h3 id="如果出现"><a href="#如果出现" class="headerlink" title="如果出现:"></a>如果出现:</h3><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fmh8nw6o5mj30ew06egm6.jpg" alt="签名配置成功"></p>
+<p>证明你的签名已经配置成功了，这时你再点击右上角-分享到朋友圈就会看到如果界面:</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fmh8zu9yg9j30jn0exmyu.jpg" alt="分享朋友圈"></p>
+<p>你会发现显示的是微信的图标和网页的标题(有时[真机]会显示公众号的名称)，结果不是跟你的需求还不是很匹配，看一下demo里面的代码：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fmh939yvabj30ig098mym.jpg" alt="分享朋友圈按钮事件"></p>
+<p>会发现在分享api外层还包了一层点击事件，只要点击一下就会出现以下界面:</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fmh956nqg0j30fm06waaq.jpg" alt="注册点击事件"></p>
+<p>发现js的接口需要被注册一下才能被调用。。。。当然，如果你不需要点击才注册，只需要将<code>wx.onMenuShareTimeline({ ... })</code>这段代码移出来，防止到<code>wx.ready({ ... })</code>中就可以了。</p>
+<p>注册完成再点击分享到朋友圈，就会出现以下界面，这样图片、链接、标题等分享的内容就实现了自定义。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fmh8yf7ufdj30kp0fhq4s.jpg" alt="分享朋友圈自定义内容"></p>
+<p>点击发送，就可以了。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h3><p>1、真机测试发现显示不了图片和标题，目前还不知道是什么情况，有可能是微信做了认证的限制，之前看了一篇文章，说微信6.0.2之后，必须要(被)认(打)证(劫)的公众号才能显示自定义的图片和标题—囧o(╯□╰)o囧，真坑爹=_=。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信公众号</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JS-SDK</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/15/JS-SDK调试/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-自定义Vue2.0组件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -258,15 +352,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">混合开发</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cordova</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -425,75 +519,6 @@
 
 
   
-    <article id="post-Cordova概要" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/23/Cordova概要/">Cordova概要</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/23/Cordova概要/" class="archive-article-date">
-  	<time datetime="2017-06-23T12:30:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装Cordova-CLI"><a href="#安装Cordova-CLI" class="headerlink" title="安装Cordova CLI"></a>安装Cordova CLI</h2><ol>
-<li>下载和安装Node.js。安装完成后你可以在命令行中使用node 和 npm 。</li>
-<li>(可选)下载和安装git client, 如果你没有。安装成功后，你可以在命令行中使用git。 这个命令行使用下载git仓库中的资源。</li>
-<li>安装cordova 模块使用Nodejs的npm工具。cordova模块会被npm工具自动下载。</li>
-</ol>
-        
-          <a class="article-more-a" href="/2017/06/23/Cordova概要/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">混合开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cordova</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/23/Cordova概要/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -590,11 +615,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
+                <a href="javascript:void(0)" class="js-tag color2">JS-SDK</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,15 +631,23 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cocoapod</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">私有库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
               </li>
              
               <li class="article-tag-list-item">
