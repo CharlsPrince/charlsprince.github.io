@@ -197,7 +197,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=(填入上面获取到的access_token)&amp;type=jsapi</div></pre></td></tr></table></figure>
 <p>则会得到ticket</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fmh74u20x1j30mc0d0ta7.jpg" alt="获取ticket"></p>
-<p>5、拿到了ticket则可以通过<a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="external">sha1加密</a>去获取签名了</p>
+<p>5、拿到了ticket则可以通过<a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">sha1加密</a>去获取签名了</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fmh7uh8mm9j30om06j0tv.jpg" alt="获取签名"></p>
 <p>仔细看一下，你会发现jsapi_ticket中间多了个<code>\</code>，其实这个<code>\</code>是不需要的，要去掉在进行加密，明文中包含了几个参数，其中appid就不多说了，测试公众号的appid；timestamp表示生成签名的时间戳，nonceStr代表随机字符串，这两个参数在测试阶段都可以随意填写，正式环境最好还是在后台服务器中使用代码生成。</p>
 <p>6、来到这里基本就差不多了，这时你需要一个测试的demo工程，将配置需要使用到的参数配置进去：</p>
@@ -448,19 +448,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,7 +460,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,6 +473,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
              
               <li class="article-tag-list-item">

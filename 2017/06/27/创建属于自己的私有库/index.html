@@ -190,13 +190,13 @@
 <p>在我看来，私有库就是自己封装的Code放到不开源的代码仓库，而GitHub就是一个管理开源Code的代码仓库，相信很多同学都是通过在GitHub上开源自己封装好的组件的，毕竟有好东西要学会分享✧(≖ ◡ ≖✿)嘿嘿</p>
 </blockquote>
 <h2 id="Cocoapods的原理及目录结构"><a href="#Cocoapods的原理及目录结构" class="headerlink" title="Cocoapods的原理及目录结构"></a>Cocoapods的原理及目录结构</h2><blockquote>
-<p>Cocoapods一共分成两块，就是<a href="https://github.com/CocoaPods/CocoaPods" target="_blank" rel="external">Cocoapods</a>和<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="external">Specs</a>,Specs是一个目录容器，将所有的第三方的podspec存放在这里，而podspec就相当于是这个库的介绍文件，里面包含了库的名字、版本、下载地址等信息</p>
+<p>Cocoapods一共分成两块，就是<a href="https://github.com/CocoaPods/CocoaPods" target="_blank" rel="noopener">Cocoapods</a>和<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">Specs</a>,Specs是一个目录容器，将所有的第三方的podspec存放在这里，而podspec就相当于是这个库的介绍文件，里面包含了库的名字、版本、下载地址等信息</p>
 </blockquote>
 <h3 id="注意项"><a href="#注意项" class="headerlink" title="注意项"></a>注意项</h3><ul>
 <li>~/.cocoapods/repos/master</li>
 </ul>
 <blockquote>
-<p>开源第三方库管理podspec的地方，这个文件夹是在使用Cocoapods的时候自动从<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="external">Specs</a>上clone到本地的<br>基本目录结构：<br>repos-&gt;master-&gt;Specs-&gt;[Name]-&gt;[Version]-&gt;[Name].podspec</p>
+<p>开源第三方库管理podspec的地方，这个文件夹是在使用Cocoapods的时候自动从<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">Specs</a>上clone到本地的<br>基本目录结构：<br>repos-&gt;master-&gt;Specs-&gt;[Name]-&gt;[Version]-&gt;[Name].podspec</p>
 </blockquote>
 <p>这个就是共有的第三方的目录，我们要做私有库，可以模仿共有库的目录结构，建立一个自己的Spec私有仓库来维护，以后我们要维护的东西基本就两样：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. 私有的Specs目录</div><div class="line">2. 我们要上传的库</div></pre></td></tr></table></figure>
@@ -204,12 +204,12 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/2925367-87daf0ce282b7437.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="远程仓库.png"></p>
 <h3 id="二、将远端的私有Specs仓库clone到本地-cocoapods目录下"><a href="#二、将远端的私有Specs仓库clone到本地-cocoapods目录下" class="headerlink" title="二、将远端的私有Specs仓库clone到本地.cocoapods目录下"></a>二、将远端的私有Specs仓库clone到本地.cocoapods目录下</h3><p>在终端运行：</p>
 <blockquote>
-<p> $ pod repo add MySpecs <a href="https://github.com/CharlsPrince/MySpecs.git" target="_blank" rel="external">https://github.com/CharlsPrince/MySpecs.git</a> </p>
+<p> $ pod repo add MySpecs <a href="https://github.com/CharlsPrince/MySpecs.git" target="_blank" rel="noopener">https://github.com/CharlsPrince/MySpecs.git</a> </p>
 </blockquote>
 <p>MySpecs 指的是仓库的名字，后面的路径就是仓库在远端的路径，这个是根据每个人远端仓库的路径而定的，将路径改成你的远端路径就行了</p>
 <h3 id="三、创建一个podspec文件"><a href="#三、创建一个podspec文件" class="headerlink" title="三、创建一个podspec文件"></a>三、创建一个podspec文件</h3><p>cd到工程文件目录下 ，在终端执行命令：</p>
 <blockquote>
-<p>$ pod spec create CommonExtension <a href="https://github.com/CharlsPrince/CommonExtension.git" target="_blank" rel="external">https://github.com/CharlsPrince/CommonExtension.git</a></p>
+<p>$ pod spec create CommonExtension <a href="https://github.com/CharlsPrince/CommonExtension.git" target="_blank" rel="noopener">https://github.com/CharlsPrince/CommonExtension.git</a></p>
 </blockquote>
 <p>CommonExtension 指的是这个podspec文件的名字，后面的路径就是这个工程在远端的路径，当然，如果要实现这一步，你需要先将你的工程push到远端，至于怎么push，这里就不详细介绍了，因为如果你使用不同的代码管理服务器方法也不尽相同，执行完了以后你会发现在当前的这个工程文件目录下回出现一个叫CommonExtension.podspec的文件</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2925367-f5b40d67b17ea557.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="podspec文件.png"></p>
@@ -258,15 +258,15 @@
 </ul>
 <h3 id="六、查询私有库并使用"><a href="#六、查询私有库并使用" class="headerlink" title="六、查询私有库并使用"></a>六、查询私有库并使用</h3><p>不出意外，这个时候，你去终端pod search 你的三方库名字，就能搜到（如果你的名字和官方Specs里面的某个三方库名字一样的话将会搜不到），使用的时候在Podfile中加入两个Specs源即：<br>官方源：</p>
 <blockquote>
-<p>source ‘<a href="https://github.com/CocoaPods/Specs.git" target="_blank" rel="external">https://github.com/CocoaPods/Specs.git</a>‘</p>
+<p>source ‘<a href="https://github.com/CocoaPods/Specs.git" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs.git</a>‘</p>
 </blockquote>
 <p>私有源：</p>
 <blockquote>
-<p>source ‘<a href="https://github.com/CharlsPrince/CommonExtension.git" target="_blank" rel="external">https://github.com/CharlsPrince/CommonExtension.git</a>‘  #即你的私有源仓库地址</p>
+<p>source ‘<a href="https://github.com/CharlsPrince/CommonExtension.git" target="_blank" rel="noopener">https://github.com/CharlsPrince/CommonExtension.git</a>‘  #即你的私有源仓库地址</p>
 </blockquote>
 <p>当然，你也可以指定地址</p>
 <blockquote>
-<p>pod ‘xxxx’, :git =&gt;’<a href="https://github.com/CharlsPrince/CommonExtension.git" target="_blank" rel="external">https://github.com/CharlsPrince/CommonExtension.git</a>‘</p>
+<p>pod ‘xxxx’, :git =&gt;’<a href="https://github.com/CharlsPrince/CommonExtension.git" target="_blank" rel="noopener">https://github.com/CharlsPrince/CommonExtension.git</a>‘</p>
 </blockquote>
 <p>或</p>
 <blockquote>
@@ -501,19 +501,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,7 +513,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,6 +526,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -176,13 +176,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="mac命令行控制SublimeText打开文件"><a href="#mac命令行控制SublimeText打开文件" class="headerlink" title="mac命令行控制SublimeText打开文件"></a>mac命令行控制SublimeText打开文件</h2><h3 id="方法一-软链接"><a href="#方法一-软链接" class="headerlink" title="方法一: 软链接"></a>方法一: 软链接</h3><blockquote>
-<p>sudo ln -s “/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl” /usr/local/bin/subl</p>
+<p>sudo ln -s “/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl” /usr/local/bin/subl</p>
 </blockquote>
-<p>其中<code>/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl</code><br>根据各人安装sublimeText位置不同而有所不同</p>
+<p>其中<code>/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl</code><br>根据各人安装sublimeText位置不同而有所不同</p>
 <h3 id="方法二-别名方式"><a href="#方法二-别名方式" class="headerlink" title="方法二: 别名方式"></a>方法二: 别名方式</h3><p>打开用户配置文件，如果提示没有该文件则先执行<code>touch ~/.bash_profile</code>创建配置文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim ~/.bash_profile</div></pre></td></tr></table></figure>
 <p>为subl添加别名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alias subl=&quot;&apos;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&apos;&quot;</div><div class="line">＃如果不添加别名，也可以选择将路径添加到环境变量下。</div><div class="line">＃这里的路径根据实际情况可能会有所不同。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alias subl=&apos;/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl&apos;</div><div class="line">＃也可以通过将路径添加到环境变量中实现</div></pre></td></tr></table></figure>
 <p>编辑完成后，<code>esc</code> + <code>:wq</code> + <code>enter</code> 退出编辑模式，然后再执行:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
 <p>使配置文件生效。此时在控制台上输入:</p>
@@ -590,19 +590,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,7 +602,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,6 +615,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
              
               <li class="article-tag-list-item">

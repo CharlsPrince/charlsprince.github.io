@@ -244,13 +244,13 @@
 </li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/2925367-62548f4cf99259ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行结果.png"></p>
-<p>######3、3<a href="http://cordova.apache.org/docs/en/deprecated.html" target="_blank" rel="external">Plugin APIs</a></p>
-<p><a href="https://www.npmjs.com/package/cordova-plugin-console" target="_blank" rel="external">cordova-plugin-console</a> Cordova Console Plugin<br>1&gt; 安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cordova plugin add cordova-plugin-console</div></pre></td></tr></table></figure></p>
+<p>######3、3<a href="http://cordova.apache.org/docs/en/deprecated.html" target="_blank" rel="noopener">Plugin APIs</a></p>
+<p><a href="https://www.npmjs.com/package/cordova-plugin-console" target="_blank" rel="noopener">cordova-plugin-console</a> Cordova Console Plugin<br>1&gt; 安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cordova plugin add cordova-plugin-console</div></pre></td></tr></table></figure></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2925367-3e5755e6bdeeab5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="console插件安装
 ![Uploading 屏幕快照 2017-02-18 上午1.35.13_535134.png . . .]"><br>2&gt; 实例<br>将index.html中的文本替换成如下文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;title&gt;Hello World&lt;/title&gt;</div><div class="line">  &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;cordova.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;</div><div class="line">   document.addEventListener(&quot;deviceready&quot;, onDeviceReady, false);</div><div class="line">   function consoleLog()&#123;</div><div class="line">          console.log(&quot;console.log works well&quot;);</div><div class="line">   &#125;</div><div class="line">  function consoleError()&#123;</div><div class="line">      console.error(&quot;console.error works well&quot;);</div><div class="line">  &#125;</div><div class="line">  function consoleException()&#123;</div><div class="line">      console.exception(&quot;console.exception works well&quot;);</div><div class="line">  &#125;</div><div class="line">  function consoleWarn()&#123;</div><div class="line">      console.warn(&quot;console.warn works well&quot;);</div><div class="line">  &#125;</div><div class="line">  function consoleInfo()&#123;</div><div class="line">      console.info(&quot;console.info works well&quot;);</div><div class="line"> &#125;</div><div class="line">  function consoleDebug()&#123;</div><div class="line">      console.debug(&quot;console.debug works well&quot;);</div><div class="line">&#125;</div><div class="line">  function consoleAssert()&#123;</div><div class="line">      console.assert(&quot;console.assert works well&quot;);</div><div class="line">&#125;</div><div class="line">  function consoleDir()&#123;</div><div class="line">      console.dir(&quot;console.dir works well&quot;);</div><div class="line">  &#125;</div><div class="line">  function consoleDirxml()&#123;</div><div class="line">      console.dirxml(&quot;console.dirxml works well&quot;);</div><div class="line">  &#125;</div><div class="line">  function consoleTime()&#123;</div><div class="line">      console.time(&quot;console.time works well&quot;);</div><div class="line">  &#125;</div><div class="line">function consoleTimeEnd()&#123;</div><div class="line">      console.timeEnd(&quot;console.timeEnd works well&quot;);</div><div class="line">    &#125;</div><div class="line">  function consoleTable()&#123;</div><div class="line">      console.table(&quot;console.table works well&quot;);</div><div class="line">&#125;</div><div class="line">  &lt;/script&gt;</div><div class="line">  &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">      button &#123;</div><div class="line">          width: 200px;height:26px;font-size: 20px;padding: 1px;margin-left: 100px;</div><div class="line">      &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div &gt;&lt;br/&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt;&lt;button onclick=&quot;consoleLog()&quot;&gt;consoleLog&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt;&lt;button onclick=&quot;consoleError()&quot;&gt;consoleError&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt;&lt;button onclick=&quot;consoleException()&quot;&gt;consoleException&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt;&lt;button onclick=&quot;consoleWarn()&quot;&gt;consoleWarn&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt;&lt;button onclick=&quot;consoleInfo()&quot;&gt;consoleInfo&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt; &lt;button onclick=&quot;consoleDebug()&quot;&gt;consoleDebug&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt;&lt;button onclick=&quot;consoleAssert()&quot;&gt;consoleAssert&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt; &lt;button onclick=&quot;consoleDir()&quot;&gt;consoleDir&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt; &lt;button onclick=&quot;consoleDirxml()&quot;&gt;consoleDirxml&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt;&lt;button onclick=&quot;consoleTime()&quot;&gt;consoleTime&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt;&lt;button onclick=&quot;consoleTimeEnd()&quot;&gt;consoleTimeEnd&lt;/button&gt;&lt;br/&gt;</div><div class="line">      &lt;br/&gt;&lt;button onclick=&quot;consoleTable()&quot;&gt;consoleTable&lt;/button&gt;&lt;br/&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 <p>运行结果：</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2925367-371b5b3810224c78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Safiri+Xcode+Simulator运行结果"></p>
-<p>感谢：<a href="http://www.jianshu.com/p/d24219c008b6" target="_blank" rel="external">使用Cordova进行iOS开发</a></p>
+<p>感谢：<a href="http://www.jianshu.com/p/d24219c008b6" target="_blank" rel="noopener">使用Cordova进行iOS开发</a></p>
 
       
 
@@ -478,19 +478,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,7 +490,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,6 +503,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
              
               <li class="article-tag-list-item">
