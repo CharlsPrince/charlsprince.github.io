@@ -155,31 +155,33 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-创建自定义模板" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-安装mongodb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/16/创建自定义模板/">创建自定义模板</a>
+      <a class="article-title" href="/2019/03/13/安装mongodb/">安装mongodb</a>
     </h1>
   
 
         
-        <a href="/2017/12/16/创建自定义模板/" class="archive-article-date">
-  	<time datetime="2017-12-16T10:11:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
+        <a href="/2019/03/13/安装mongodb/" class="archive-article-date">
+  	<time datetime="2019-03-13T03:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近写项目的时候用到了很多UIViewController的子类，所以自定义了个模板希望能快速创建一个规范且统一的子类，尽量减少重复代码的编写，Command + N 可以看见系统已经为我们提供了很多方便的模板:</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fmishn9sgyj30k908j3zh.jpg" alt="系统模板"></p>
-        
-          <a class="article-more-a" href="/2017/12/16/创建自定义模板/#more">more >></a>
-        
+        <h2 id="安装MongoDB"><a href="#安装MongoDB" class="headerlink" title="安装MongoDB"></a>安装MongoDB</h2><h2 id="Mac环境"><a href="#Mac环境" class="headerlink" title="Mac环境"></a>Mac环境</h2><h3 id="1、下载安装"><a href="#1、下载安装" class="headerlink" title="1、下载安装"></a>1、下载安装</h3><h3 id="2、HomeBrew方式安装"><a href="#2、HomeBrew方式安装" class="headerlink" title="2、HomeBrew方式安装"></a>2、HomeBrew方式安装</h3><p>官方文档参考: <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/" target="_blank" rel="noopener">install-mongodb-on-os-x</a></p>
+<p>在命令行输入并执行以下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install mongodb</div></pre></td></tr></table></figure>
+<p>启动mongodb:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod —config /usr/local/etc/mongod.conf</div></pre></td></tr></table></figure>
+<h2 id="Linux环境"><a href="#Linux环境" class="headerlink" title="Linux环境"></a>Linux环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">设置源</div><div class="line">[root@vm11 ~]# cd /etc/yum.repos.d/</div><div class="line">[root@vm11 yum.repos.d]# vi mongodb-org-3.6.repo</div><div class="line">[mongodb-org-3.6]</div><div class="line">name=MongoDB Repository</div><div class="line">baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/</div><div class="line">gpgcheck=1</div><div class="line">enabled=1</div><div class="line">gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc</div><div class="line"></div><div class="line">执行安装</div><div class="line">[root@vm11 yum.repos.d]# sudo yum install -y mongodb-org</div><div class="line"></div><div class="line">启动数据库</div><div class="line">[root@vm11 yum.repos.d]# service mongod start</div><div class="line">Redirecting to /bin/systemctl start mongod.service</div><div class="line"></div><div class="line">[root@iZwz9btqnhlgt7dsj8hhhhZ nodejs]# nohup mongod &amp;</div><div class="line">[1] 26658</div><div class="line">[root@iZwz9btqnhlgt7dsj8hhhhZ nodejs]# nohup: ignoring input and appending output to `nohup.out&apos;</div><div class="line"></div><div class="line">关闭数据库</div><div class="line">[root@iZwz9btqnhlgt7dsj8hhhhZ nodejs]# nohup mongod --shutdown &amp;</div><div class="line">[1] 26636</div><div class="line">[root@iZwz9btqnhlgt7dsj8hhhhZ nodejs]# nohup: ignoring input and appending output to `nohup.out&apos;</div><div class="line"></div><div class="line">查看状态</div><div class="line">[root@vm11 yum.repos.d]# ps aux | grep mongod</div><div class="line">mongod    1267  0.4  7.8 1010008 80184 ?       Sl   11:47   0:36 /usr/bin/mongo  -f /etc/mongod.conf</div></pre></td></tr></table></figure>
+
       
 
       
@@ -192,7 +194,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
         		</li>
       		
 		</ul>
@@ -202,7 +204,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/16/创建自定义模板/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/13/安装mongodb/">展开全文 >></a>
         </p>
       
 
@@ -217,31 +219,86 @@
 
 
   
-    <article id="post-链式编程思维" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-nodejs调试程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/16/链式编程思维/">链式编程思维</a>
+      <a class="article-title" href="/2019/03/13/nodejs调试程序/">nodejs调试程序</a>
     </h1>
   
 
         
-        <a href="/2017/12/16/链式编程思维/" class="archive-article-date">
-  	<time datetime="2017-12-16T10:10:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
+        <a href="/2019/03/13/nodejs调试程序/" class="archive-article-date">
+  	<time datetime="2019-03-13T03:43:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>链式编程不得不先说下Masonry，之前的项目使用到自动布局，所以引用了Masonry这个库，感觉写这个库的写得特别好，能够将非常繁琐的布局代码使用一句代码实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make.right.equalTo(self.view.mas_right).with.offset(-15);</div></pre></td></tr></table></figure>
-<p>像这种通过“点”语法，将需要执行的代码块持续执行，这就是链式编程，他能将代码简单块，使代码通俗易懂，书写方便<br>像这样<code>equalTo(self.view.mas_right)</code>通过“()”去调用函数，一般调用完返回的还是这个对象本身，就是函数式编程。</p>
+        <h1 id="Chrome-DevTools"><a href="#Chrome-DevTools" class="headerlink" title="Chrome DevTools"></a>Chrome DevTools</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">首先在命令行输入 node --inspect ./bin/www</div></pre></td></tr></table></figure>
+<blockquote>
+<p>访问 <code>chrome://inspect</code>, 点击配置按钮，确保 Host 和 Port 对应</p>
+<p>访问元信息中(<a href="http://127.0.0.1:9229/json)的" target="_blank" rel="noopener">http://127.0.0.1:9229/json)的</a> devtoolsFrontendUrl</p>
+<p>Chrome 打开连接 (<a href="http://127.0.0.1:9229" target="_blank" rel="noopener">http://127.0.0.1:9229</a>) 然后使用 cmmand+option+i 快速打开开发者工具，点击绿色小图标</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/nodejs调试程序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-智能终端设备+快递物流行业分析论" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
         
-          <a class="article-more-a" href="/2017/12/16/链式编程思维/#more">more >></a>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/23/智能终端设备+快递物流行业分析论/">智能终端设备+快递物流行业分析论</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/23/智能终端设备+快递物流行业分析论/" class="archive-article-date">
+  	<time datetime="2018-08-23T15:15:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://upload-images.jianshu.io/upload_images/2925367-675d064b6d075fd4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片源于网络，侵权请联系删除"></p>
+<blockquote>
+<p>要不要写这篇文章？其实我内心纠结了很久，因为2018年已经过了一大半，物流行业作为2018年最有潜力的行业之一，将会爆发一波新的风口，相信在物联网行业内已经不算是什么秘密了。</p>
+<p>从去年开始，逐渐就有了互联网公司巨子涌入互联网+物流物联网概念，这厢阿里刚刚宣布联合云峰基金投资圆通的消息，那边物流互联网公司汇通天下便宣布了与腾讯达成投资协议，完成了C轮的融资。很明显，这些互联网巨子瞄准了物流这个行业，或者说，其实从头到尾物流行业都是被互联网公司牵着鼻子走？你想，如果没有互联网的支撑、没有电子商城、没有网上购物，快递物流也不可能迎来春天。至于根源，笔者就不做考究了，但是，目前我们唯一能确定的是，抓住快递物流行业的时机可一不可再，过了这个村，可能就没有这个店了。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2018/08/23/智能终端设备+快递物流行业分析论/#more">more >></a>
         
       
 
@@ -255,11 +312,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">快递物流</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">链式编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">智能</a>
         		</li>
       		
 		</ul>
@@ -269,7 +326,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/16/链式编程思维/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/23/智能终端设备+快递物流行业分析论/">展开全文 >></a>
         </p>
       
 
@@ -284,31 +341,37 @@
 
 
   
-    <article id="post-通讯录排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-npm发布组件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/16/通讯录排序/">通讯录排序</a>
+      <a class="article-title" href="/2018/02/23/npm发布组件/">npm发布组件</a>
     </h1>
   
 
         
-        <a href="/2017/12/16/通讯录排序/" class="archive-article-date">
-  	<time datetime="2017-12-16T10:10:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
+        <a href="/2018/02/23/npm发布组件/" class="archive-article-date">
+  	<time datetime="2018-02-23T01:38:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://upload-images.jianshu.io/upload_images/2925367-21195c5544ca71f3.gif?imageMogr2/auto-orient/strip" alt="2017-02-07 16_33_47.gif"></p>
-<p>通讯录是现在开发一个app必不可少的功能了，因为每个老板都想囤积用户，所以都想搞<code>IM</code>,虽然这块肉不是人人都能吃，但明显很多人都想分一杯羹，我们作为开发，吃肉喝汤当然轮不到我们o(╯□╰)o，可是分下来的任务必须完成。</p>
-<p>既然有通讯录，当然离不开<strong>排序</strong></p>
+        <h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><ul>
+<li>安装nodejs和npm</li>
+<li>拥有一个git账号用于托管代码</li>
+<li>注册一个npm账号</li>
+</ul>
+<h2 id="在GitHub上创建一个项目"><a href="#在GitHub上创建一个项目" class="headerlink" title="在GitHub上创建一个项目"></a>在GitHub上创建一个项目</h2><ul>
+<li>新建项目，然后使用以下命令clone到本地</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/CharlsPrince/cp-verification.git</div></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2017/12/16/通讯录排序/#more">more >></a>
+          <a class="article-more-a" href="/2018/02/23/npm发布组件/#more">more >></a>
         
       
 
@@ -322,7 +385,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">组件</a>
         		</li>
       		
 		</ul>
@@ -332,7 +399,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/16/通讯录排序/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/02/23/npm发布组件/">展开全文 >></a>
         </p>
       
 
@@ -347,30 +414,50 @@
 
 
   
-    <article id="post-带占位文字的TextView" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-mac命令行控制SublimeText打开文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/16/带占位文字的TextView/">带占位文字的TextView</a>
+      <a class="article-title" href="/2017/12/26/mac命令行控制SublimeText打开文件/">mac命令行控制SublimeText打开文件</a>
     </h1>
   
 
         
-        <a href="/2017/12/16/带占位文字的TextView/" class="archive-article-date">
-  	<time datetime="2017-12-16T10:10:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
+        <a href="/2017/12/26/mac命令行控制SublimeText打开文件/" class="archive-article-date">
+  	<time datetime="2017-12-26T07:27:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>作为输入框<code>UITextField</code>和<code>UITextView</code>各有优缺点，开发中经常需要使用到这两个输入框，<code>UITextField</code>可以通过<code>placeholder</code>这个属性来加入占位文字，但不能换行；<code>UITextView</code>虽然能自动换行，却没有placeholder这种方便的方式添加占位文字，虽然可以通过<code>attributeString</code>来设置，但还是觉得不是特别方便。<br>  最好的方法就是自定义一个<code>UITextView</code>的子类<a href="https://github.com/charlsPrince/PlaceholderView" target="_blank" rel="noopener">PlaceholderView</a>，那么这个类里面的任何内容都是你说了算，为<code>UITextView</code>添加<code>placeholder</code>功能只需要简单的两个步骤：一个通知和一个重写<code>drawRect</code>方法。</p>
-        
-          <a class="article-more-a" href="/2017/12/16/带占位文字的TextView/#more">more >></a>
-        
+        <h2 id="mac命令行控制SublimeText打开文件"><a href="#mac命令行控制SublimeText打开文件" class="headerlink" title="mac命令行控制SublimeText打开文件"></a>mac命令行控制SublimeText打开文件</h2><h3 id="方法一-软链接"><a href="#方法一-软链接" class="headerlink" title="方法一: 软链接"></a>方法一: 软链接</h3><blockquote>
+<p>sudo ln -s “/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl” /usr/local/bin/subl</p>
+</blockquote>
+<p>其中<code>/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl</code><br>根据各人安装sublimeText位置不同而有所不同</p>
+<h3 id="方法二-别名方式"><a href="#方法二-别名方式" class="headerlink" title="方法二: 别名方式"></a>方法二: 别名方式</h3><p>打开用户配置文件，如果提示没有该文件则先执行<code>touch ~/.bash_profile</code>创建配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>为subl添加别名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alias subl=&apos;/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl&apos;</div><div class="line">＃也可以通过将路径添加到环境变量中实现</div></pre></td></tr></table></figure>
+<p>编辑完成后，<code>esc</code> + <code>:wq</code> + <code>enter</code> 退出编辑模式，然后再执行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>使配置文件生效。此时在控制台上输入:</p>
+<blockquote>
+<p>subl -v</p>
+</blockquote>
+<p>如果打印如下类似SublimeText版本号的文本则证明subl这个命令执行工具已经配置成功。</p>
+<blockquote>
+<p>Sublime Text Build 3143</p>
+</blockquote>
+<p>也可以使用<code>subl -help</code>查看下这个工具支持什么指令。</p>
+<p>想要在控制台控制使用SublimeText某个文件，一般是 <code>subl + 目的文件或文件夹路径</code>, 如:</p>
+<blockquote>
+<p>  subl ~/.bash_profile</p>
+</blockquote>
+
       
 
       
@@ -383,69 +470,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">sublimeText</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/16/带占位文字的TextView/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Mac-node-js环境的安装与测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/16/Mac-node-js环境的安装与测试/">Mac node.js环境的安装与测试</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/16/Mac-node-js环境的安装与测试/" class="archive-article-date">
-  	<time datetime="2017-12-16T10:08:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1、mac-node-js环境的配置"><a href="#1、mac-node-js环境的配置" class="headerlink" title="1、mac node.js环境的配置"></a>1、mac node.js环境的配置</h2><p>第一步：打开终端，输入以下命令安装Homebrew<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure></p>
-<p>Homebrew官网 <a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="noopener">http://brew.sh/index_zh-cn.html</a><br><img src="http://upload-images.jianshu.io/upload_images/2925367-8c429114bbd9931c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Homebrew 安装成功.png"></p>
-        
-          <a class="article-more-a" href="/2017/12/16/Mac-node-js环境的安装与测试/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bash</a>
         		</li>
       		
 		</ul>
@@ -455,7 +484,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/16/Mac-node-js环境的安装与测试/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/12/26/mac命令行控制SublimeText打开文件/">展开全文 >></a>
         </p>
       
 
@@ -472,7 +501,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -566,6 +595,18 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">LLDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
               </li>
              
@@ -583,6 +624,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,11 +659,27 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HomeBrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cocoapod</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">私有库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Button</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,11 +691,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Button</a>
+                <a href="javascript:void(0)" class="js-tag color3">图片</a>
               </li>
              
               <li class="article-tag-list-item">
