@@ -155,6 +155,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-LLDB调试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/LLDB调试/">LLDB调试</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/LLDB调试/" class="archive-article-date">
+  	<time datetime="2019-03-13T03:51:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="po"><a href="#po" class="headerlink" title="po"></a>po</h3><p>(print object) 是LLDB中的一个命令，其主要功能是输出object-c中对象(object)的信息</p>
+<h3 id="p"><a href="#p" class="headerlink" title="p"></a>p</h3><p>(print)</p>
+<h3 id="expr"><a href="#expr" class="headerlink" title="expr"></a>expr</h3><p>(expression) 能够运行时修改变量的值</p>
+<h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>(next) step over</p>
+<h3 id="s"><a href="#s" class="headerlink" title="s"></a>s</h3><p>(step) step into</p>
+<h3 id="finish"><a href="#finish" class="headerlink" title="finish"></a>finish</h3><p>(step) step out</p>
+<h3 id="c"><a href="#c" class="headerlink" title="c"></a>c</h3><p>(continue) goto next breakpoint</p>
+<h3 id="p-print-expr-expression"><a href="#p-print-expr-expression" class="headerlink" title="p/print/expr/expression"></a>p/print/expr/expression</h3><p>print as a C/C++ basic variable</p>
+<h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><p>调用。其实上述p/po后接表达式(expression)也有调用的功能，一般只在不需要显式输出，或是无返回值时使用call，用于动态调试插入调用代码。</p>
+<p>例如可以在viewDidLoad:里面设置断点，然后在程序中断的时候输入以下命令：</p>
+<blockquote>
+<p>call [self.view setBackgroundColor:[UIColor redColor]]</p>
+</blockquote>
+<p>继续运行程序，view的背景颜色将变成红色！</p>
+<h3 id="bt"><a href="#bt" class="headerlink" title="bt"></a>bt</h3><p>(backtrace) 打印当前调用堆栈（crash堆栈），“bt all”可打印所有thread的堆栈（相当于command+6的Debug Session Navigation）</p>
+<h3 id="image"><a href="#image" class="headerlink" title="image"></a>image</h3><p>可用于寻址，有多个组合命令，比较实用的一种用法是寻找栈地址对应的代码（行）位置</p>
+<p>例子:</p>
+<blockquote>
+<p>image lookup –address 0x000000010b9ce919</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">LLDB</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">调试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/LLDB调试/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-linux安装nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -407,79 +489,6 @@
 
 
   
-    <article id="post-npm发布组件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/23/npm发布组件/">npm发布组件</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/23/npm发布组件/" class="archive-article-date">
-  	<time datetime="2018-02-23T01:38:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><ul>
-<li>安装nodejs和npm</li>
-<li>拥有一个git账号用于托管代码</li>
-<li>注册一个npm账号</li>
-</ul>
-<h2 id="在GitHub上创建一个项目"><a href="#在GitHub上创建一个项目" class="headerlink" title="在GitHub上创建一个项目"></a>在GitHub上创建一个项目</h2><ul>
-<li>新建项目，然后使用以下命令clone到本地</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/CharlsPrince/cp-verification.git</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/02/23/npm发布组件/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">组件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/23/npm发布组件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -576,14 +585,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">LLDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
               </li>
              
@@ -592,15 +593,23 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JS-SDK</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">LLDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,18 +637,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cocoapod</a>
               </li>
              
@@ -648,7 +645,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">HomeBrew</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自定义插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,6 +670,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">智能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ssh key</a>
               </li>
              
               <li class="article-tag-list-item">

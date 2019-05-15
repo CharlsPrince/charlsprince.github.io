@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://charlsPrince.com">
-  <title>Tag: 混合开发 | Charls&#39;s Blogs</title>
+  <title>配置多个ssh key | Charls&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="人生的道路太难走，太多坎坷，是男人，就挺着胸膛走过去。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Charls&#39;s Blogs">
-<meta property="og:url" content="http://charlsPrince.com/tags/混合开发/index.html">
+  <meta name="description" content="SSH简介SSH 是 Secure Shell 的缩写，有 IETF 的网络小组所制定，是一种网络协议，用于计算机之间的加密登录，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题，之所以保证安全，是因为它采用了公钥加密的方式。 过程（1）远程主机收到用户的登录请求，将自己的公钥发给用户。（2）用户使用这个公钥，将登录密码加密后发送回来。（3）远程主机用自己的私钥，解密登录密码，如果密码正">
+<meta name="keywords" content="ssh key">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置多个ssh key">
+<meta property="og:url" content="http://charlsPrince.com/2019/05/15/配置多个ssh-key/index.html">
 <meta property="og:site_name" content="Charls&#39;s Blogs">
-<meta property="og:description" content="人生的道路太难走，太多坎坷，是男人，就挺着胸膛走过去。">
+<meta property="og:description" content="SSH简介SSH 是 Secure Shell 的缩写，有 IETF 的网络小组所制定，是一种网络协议，用于计算机之间的加密登录，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题，之所以保证安全，是因为它采用了公钥加密的方式。 过程（1）远程主机收到用户的登录请求，将自己的公钥发给用户。（2）用户使用这个公钥，将登录密码加密后发送回来。（3）远程主机用自己的私钥，解密登录密码，如果密码正">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g329zv9f1pj317o0nsdng.jpg">
+<meta property="og:updated_time" content="2019-05-15T12:31:42.357Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Charls&#39;s Blogs">
-<meta name="twitter:description" content="人生的道路太难走，太多坎坷，是男人，就挺着胸膛走过去。">
+<meta name="twitter:title" content="配置多个ssh key">
+<meta name="twitter:description" content="SSH简介SSH 是 Secure Shell 的缩写，有 IETF 的网络小组所制定，是一种网络协议，用于计算机之间的加密登录，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题，之所以保证安全，是因为它采用了公钥加密的方式。 过程（1）远程主机收到用户的登录请求，将自己的公钥发给用户。（2）用户使用这个公钥，将登录密码加密后发送回来。（3）远程主机用自己的私钥，解密登录密码，如果密码正">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1g329zv9f1pj317o0nsdng.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Charls&#39;s Blogs" type="application/atom+xml">
   
@@ -153,114 +157,169 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-配置多个ssh-key" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/28/使用 plugman 创建Cordova插件-iOS为例/" class="archive-article-date">
-  	<time datetime="2017-06-28T13:59:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/28/使用 plugman 创建Cordova插件-iOS为例/">使用 plugman 创建Cordova插件-iOS为例</a>
+    <h1 class="article-title" itemprop="name">
+      配置多个ssh key
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/05/15/配置多个ssh-key/" class="archive-article-date">
+  	<time datetime="2019-05-15T11:53:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>SSH 是 Secure Shell 的缩写，有 IETF 的网络小组所制定，是一种网络协议，用于计算机之间的加密登录，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题，之所以保证安全，是因为它采用了公钥加密的方式。</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>（1）远程主机收到用户的登录请求，将自己的公钥发给用户。<br>（2）用户使用这个公钥，将登录密码加密后发送回来。<br>（3）远程主机用自己的私钥，解密登录密码，如果密码正确就同意用户登录。</p>
+<h1 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h1><h2 id="同时拥有-gitlab-和-github-的账号，且注册账号的邮箱不同，而适用-ssh-生成-key-默认会在用户的根目录下的-ssh文件夹下生成-id-rsa-和-id-rsa-pub-文件，但是想换一个账号-clone-代码又提示没有权限"><a href="#同时拥有-gitlab-和-github-的账号，且注册账号的邮箱不同，而适用-ssh-生成-key-默认会在用户的根目录下的-ssh文件夹下生成-id-rsa-和-id-rsa-pub-文件，但是想换一个账号-clone-代码又提示没有权限" class="headerlink" title="同时拥有 gitlab 和 github 的账号，且注册账号的邮箱不同，而适用 ssh 生成 key ,默认会在用户的根目录下的.ssh文件夹下生成 id_rsa 和 id_rsa.pub 文件，但是想换一个账号 clone 代码又提示没有权限"></a>同时拥有 gitlab 和 github 的账号，且注册账号的邮箱不同，而适用 ssh 生成 key ,默认会在用户的根目录下的<code>.ssh</code>文件夹下生成 id_rsa 和 id_rsa.pub 文件，但是想换一个账号 clone 代码又提示没有权限</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git@github.com: Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div><div class="line">and the repository exists.</div></pre></td></tr></table></figure>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="生成并添加第一个-ssh-key"><a href="#生成并添加第一个-ssh-key" class="headerlink" title="生成并添加第一个 ssh key"></a>生成并添加第一个 ssh key</h2><p>前往 <code>~/.ssh</code> 路径下，如果里面有文件则全部清除，然后输入以下命令，生成对应的私钥和公钥<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;email@yourcompany.com&quot;</div></pre></td></tr></table></figure></p>
+<p>然后需要你为其取个名字 <code>Enter file in which to save the key (/Users/charls/.ssh/id_rsa)</code> 这个随便写就行了，默认不填写的话生成的文件就是以 <code>id_rsa</code> 开头，生成了以后，将<code>.pub</code>文件的内容复制到github(gitlab)上</p>
+<h2 id="生成并添加第二个-ssh-key"><a href="#生成并添加第二个-ssh-key" class="headerlink" title="生成并添加第二个 ssh key"></a>生成并添加第二个 ssh key</h2><p>步骤跟第一个步骤一样，但有点需要注意的是要保证两个<code>key</code>的名称不能一样。</p>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>因为前面已经删除了<code>~/.ssh</code>路径下的所有文件，所以应该这个路径下的文件都是新的</p>
+<ul>
+<li>在 <code>~/.ssh</code>目录下新建一个 config 文件(无后缀)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ touch config</div></pre></td></tr></table></figure>
+<ul>
+<li>添加内容</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#github配置</div><div class="line">Host github.com</div><div class="line">    HostName ssh.github.com</div><div class="line">    Port 443</div><div class="line">    IdentityFile ~/.ssh/id_rsa_961629701</div><div class="line">    User git</div><div class="line">#gitlab的配置</div><div class="line">Host 112.94.224.231</div><div class="line">    HostName 112.94.224.231</div><div class="line">    IdentityFile ~/.ssh/id_rsa_gitlab</div><div class="line">#gitlab的配置</div><div class="line">Host 192.168.10.85</div><div class="line">    HostName 192.168.10.85</div><div class="line">    IdentityFile ~/.ssh/id_rsa_gitlab</div></pre></td></tr></table></figure>
+<ul>
+<li>ssh连接测试</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div><div class="line">控制台会打印:</div><div class="line">Hi CharlsPrince! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div><div class="line"></div><div class="line">ssh -T git@112.94.224.231</div><div class="line">控制台会打印:</div><div class="line">Welcome to GitLab, 黄佑成!</div><div class="line"></div><div class="line">ssh -T git@192.168.10.85</div><div class="line">控制台会打印:</div><div class="line">Welcome to GitLab, 黄佑成!</div></pre></td></tr></table></figure>
+<h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1g329zv9f1pj317o0nsdng.jpg" alt="目录结构"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">混合开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cordova</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">自定义插件</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ssh key</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://charlsPrince.com/2019/05/15/配置多个ssh-key/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/23/Cordova概要/" class="archive-article-date">
-  	<time datetime="2017-06-23T12:30:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/23/Cordova概要/">Cordova概要</a>
-    </h1>
+  
+    <a href="/2019/05/15/CMMI5级评估总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CMMI5级评估总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">混合开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Cordova</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -283,9 +342,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
