@@ -155,6 +155,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mac命令行控制SublimeText打开文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/26/mac命令行控制SublimeText打开文件/">mac命令行控制SublimeText打开文件</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/26/mac命令行控制SublimeText打开文件/" class="archive-article-date">
+  	<time datetime="2017-12-26T07:27:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="mac命令行控制SublimeText打开文件"><a href="#mac命令行控制SublimeText打开文件" class="headerlink" title="mac命令行控制SublimeText打开文件"></a>mac命令行控制SublimeText打开文件</h2><h3 id="方法一-软链接"><a href="#方法一-软链接" class="headerlink" title="方法一: 软链接"></a>方法一: 软链接</h3><blockquote>
+<p>sudo ln -s “/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl” /usr/local/bin/subl</p>
+</blockquote>
+<p>其中<code>/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl</code><br>根据各人安装sublimeText位置不同而有所不同</p>
+<h3 id="方法二-别名方式"><a href="#方法二-别名方式" class="headerlink" title="方法二: 别名方式"></a>方法二: 别名方式</h3><p>打开用户配置文件，如果提示没有该文件则先执行<code>touch ~/.bash_profile</code>创建配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>为subl添加别名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alias subl=&apos;/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl&apos;</div><div class="line">＃也可以通过将路径添加到环境变量中实现</div></pre></td></tr></table></figure>
+<p>编辑完成后，<code>esc</code> + <code>:wq</code> + <code>enter</code> 退出编辑模式，然后再执行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>使配置文件生效。此时在控制台上输入:</p>
+<blockquote>
+<p>subl -v</p>
+</blockquote>
+<p>如果打印如下类似SublimeText版本号的文本则证明subl这个命令执行工具已经配置成功。</p>
+<blockquote>
+<p>Sublime Text Build 3143</p>
+</blockquote>
+<p>也可以使用<code>subl -help</code>查看下这个工具支持什么指令。</p>
+<p>想要在控制台控制使用SublimeText某个文件，一般是 <code>subl + 目的文件或文件夹路径</code>, 如:</p>
+<blockquote>
+<p>  subl ~/.bash_profile</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">sublimeText</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bash</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/26/mac命令行控制SublimeText打开文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-生产环境如何测试推送" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -409,67 +494,6 @@
 
 
   
-    <article id="post-带占位文字的TextView" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/16/带占位文字的TextView/">带占位文字的TextView</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/16/带占位文字的TextView/" class="archive-article-date">
-  	<time datetime="2017-12-16T10:10:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作为输入框<code>UITextField</code>和<code>UITextView</code>各有优缺点，开发中经常需要使用到这两个输入框，<code>UITextField</code>可以通过<code>placeholder</code>这个属性来加入占位文字，但不能换行；<code>UITextView</code>虽然能自动换行，却没有placeholder这种方便的方式添加占位文字，虽然可以通过<code>attributeString</code>来设置，但还是觉得不是特别方便。<br>  最好的方法就是自定义一个<code>UITextView</code>的子类<a href="https://github.com/charlsPrince/PlaceholderView" target="_blank" rel="noopener">PlaceholderView</a>，那么这个类里面的任何内容都是你说了算，为<code>UITextView</code>添加<code>placeholder</code>功能只需要简单的两个步骤：一个通知和一个重写<code>drawRect</code>方法。</p>
-        
-          <a class="article-more-a" href="/2017/12/16/带占位文字的TextView/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/16/带占位文字的TextView/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -574,15 +598,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,15 +622,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,14 +654,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HomeBrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cocoapod</a>
               </li>
              
@@ -646,11 +662,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">HomeBrew</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Button</a>
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,11 +678,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图片</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Button</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">链式编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">图片</a>
               </li>
             
             <div class="clearfix"></div>

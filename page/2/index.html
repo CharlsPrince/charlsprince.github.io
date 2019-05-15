@@ -155,6 +155,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-linux安装nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/linux安装nginx/">linux安装nginx</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/linux安装nginx/" class="archive-article-date">
+  	<time datetime="2019-03-13T03:49:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="linux安装nginx"><a href="#linux安装nginx" class="headerlink" title="linux安装nginx"></a>linux安装nginx</h2><p>依次执行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">yum install gcc-c++</div><div class="line">yum install -y openssl openssl-devel</div><div class="line">yum install -y pcre pcre-devel</div><div class="line">yum install -y zlib zlib-devel</div><div class="line">yum -y install nginx</div><div class="line">sudo nginx</div></pre></td></tr></table></figure>
+<p>如果出现:<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fow6a128s5j30kg0233z3.jpg" alt="image"></p>
+<p>则 去到 /etc/nginx/conf.d 目录下，将下图框内容注释即可:<br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fow6byv1mej30c3065t9a.jpg" alt="image"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/linux安装nginx/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-安装mongodb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -414,91 +480,6 @@
 
 
   
-    <article id="post-mac命令行控制SublimeText打开文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/26/mac命令行控制SublimeText打开文件/">mac命令行控制SublimeText打开文件</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/26/mac命令行控制SublimeText打开文件/" class="archive-article-date">
-  	<time datetime="2017-12-26T07:27:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="mac命令行控制SublimeText打开文件"><a href="#mac命令行控制SublimeText打开文件" class="headerlink" title="mac命令行控制SublimeText打开文件"></a>mac命令行控制SublimeText打开文件</h2><h3 id="方法一-软链接"><a href="#方法一-软链接" class="headerlink" title="方法一: 软链接"></a>方法一: 软链接</h3><blockquote>
-<p>sudo ln -s “/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl” /usr/local/bin/subl</p>
-</blockquote>
-<p>其中<code>/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl</code><br>根据各人安装sublimeText位置不同而有所不同</p>
-<h3 id="方法二-别名方式"><a href="#方法二-别名方式" class="headerlink" title="方法二: 别名方式"></a>方法二: 别名方式</h3><p>打开用户配置文件，如果提示没有该文件则先执行<code>touch ~/.bash_profile</code>创建配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim ~/.bash_profile</div></pre></td></tr></table></figure>
-<p>为subl添加别名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alias subl=&apos;/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl&apos;</div><div class="line">＃也可以通过将路径添加到环境变量中实现</div></pre></td></tr></table></figure>
-<p>编辑完成后，<code>esc</code> + <code>:wq</code> + <code>enter</code> 退出编辑模式，然后再执行:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
-<p>使配置文件生效。此时在控制台上输入:</p>
-<blockquote>
-<p>subl -v</p>
-</blockquote>
-<p>如果打印如下类似SublimeText版本号的文本则证明subl这个命令执行工具已经配置成功。</p>
-<blockquote>
-<p>Sublime Text Build 3143</p>
-</blockquote>
-<p>也可以使用<code>subl -help</code>查看下这个工具支持什么指令。</p>
-<p>想要在控制台控制使用SublimeText某个文件，一般是 <code>subl + 目的文件或文件夹路径</code>, 如:</p>
-<blockquote>
-<p>  subl ~/.bash_profile</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">sublimeText</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bash</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/26/mac命令行控制SublimeText打开文件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -603,15 +584,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,15 +608,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,14 +640,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HomeBrew</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cocoapod</a>
               </li>
              
@@ -675,11 +648,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">HomeBrew</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Button</a>
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,11 +664,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图片</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Button</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">链式编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">图片</a>
               </li>
             
             <div class="clearfix"></div>
