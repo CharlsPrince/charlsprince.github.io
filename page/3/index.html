@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://charlsPrince.com">
   <title>Charls&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -36,7 +36,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -155,7 +155,7 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-npm发布组件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-npm发布组件" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -183,7 +183,7 @@
 <h2 id="在GitHub上创建一个项目"><a href="#在GitHub上创建一个项目" class="headerlink" title="在GitHub上创建一个项目"></a>在GitHub上创建一个项目</h2><ul>
 <li>新建项目，然后使用以下命令clone到本地</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/CharlsPrince/cp-verification.git</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/CharlsPrince/cp-verification.git</span><br></pre></td></tr></table></figure>
         
       
 
@@ -226,7 +226,7 @@
 
 
   
-    <article id="post-mac命令行控制SublimeText打开文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-mac命令行控制SublimeText打开文件" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -251,11 +251,11 @@
 </blockquote>
 <p>其中<code>/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl</code><br>根据各人安装sublimeText位置不同而有所不同</p>
 <h3 id="方法二-别名方式"><a href="#方法二-别名方式" class="headerlink" title="方法二: 别名方式"></a>方法二: 别名方式</h3><p>打开用户配置文件，如果提示没有该文件则先执行<code>touch ~/.bash_profile</code>创建配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim ~/.bash_profile</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
 <p>为subl添加别名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alias subl=&apos;/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl&apos;</div><div class="line">＃也可以通过将路径添加到环境变量中实现</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias subl=&apos;/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl&apos;</span><br><span class="line">＃也可以通过将路径添加到环境变量中实现</span><br></pre></td></tr></table></figure>
 <p>编辑完成后，<code>esc</code> + <code>:wq</code> + <code>enter</code> 退出编辑模式，然后再执行:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure>
 <p>使配置文件生效。此时在控制台上输入:</p>
 <blockquote>
 <p>subl -v</p>
@@ -311,7 +311,7 @@
 
 
   
-    <article id="post-生产环境如何测试推送" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-生产环境如何测试推送" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -332,7 +332,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近在开发项目的时候需要使用到推送，开发环境的推送很好测试，但生产环境的推送测试我以前是打包，然后发布到蒲公英测试，虽然不算麻烦，但每次都要打包有点腻。后来我尝试了一下如何不用打包也能测试生产环境的推送。<br>首先需要在官网上创建一个ad_hoc证书，当然app ID、apple Device和Profile都必不可少，然后打开你开发中的工程，打开app推送设置:</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fmis5ye5olj30hl07i751.jpg" alt="推送设置"></p>
+<p><img src="/2017/12/16/生产环境如何测试推送/006tNc79gy1fmis5ye5olj30hl07i751.jpg" alt="推送设置"></p>
         
       
 
@@ -371,7 +371,7 @@
 
 
   
-    <article id="post-创建自定义模板" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-创建自定义模板" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -392,7 +392,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近写项目的时候用到了很多UIViewController的子类，所以自定义了个模板希望能快速创建一个规范且统一的子类，尽量减少重复代码的编写，Command + N 可以看见系统已经为我们提供了很多方便的模板:</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fmishn9sgyj30k908j3zh.jpg" alt="系统模板"></p>
+<p><img src="/2017/12/16/创建自定义模板/006tNc79gy1fmishn9sgyj30k908j3zh.jpg" alt="系统模板"></p>
         
       
 
@@ -431,7 +431,7 @@
 
 
   
-    <article id="post-链式编程思维" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-链式编程思维" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -452,7 +452,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>链式编程不得不先说下Masonry，之前的项目使用到自动布局，所以引用了Masonry这个库，感觉写这个库的写得特别好，能够将非常繁琐的布局代码使用一句代码实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make.right.equalTo(self.view.mas_right).with.offset(-15);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make.right.equalTo(self.view.mas_right).with.offset(-15);</span><br></pre></td></tr></table></figure>
 <p>像这种通过“点”语法，将需要执行的代码块持续执行，这就是链式编程，他能将代码简单块，使代码通俗易懂，书写方便<br>像这样<code>equalTo(self.view.mas_right)</code>通过“()”去调用函数，一般调用完返回的还是这个对象本身，就是函数式编程。</p>
         
       
@@ -644,19 +644,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,7 +712,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

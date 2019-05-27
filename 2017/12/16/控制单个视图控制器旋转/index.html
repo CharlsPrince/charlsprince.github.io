@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://charlsPrince.com">
   <title>控制单个视图控制器旋转 | Charls&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="Charls&#39;s Blogs">
 <meta property="og:description" content="直接控制App屏幕旋转方向：  我们可以直接在General -&amp;gt; Deployment info 里面设置限制app旋转方向，这样子就可以控制允许屏幕旋转哪几种方向了，但这个设置并不能实现所有项目的需求，比如做一下视频相关的app，其他的视图都是不允许横屏的，只有视频那个控制器能够横屏，这个时候你根本可能就没有办法再更改设置里面的内容了，只能通过代码去实现横屏。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-fd11c3f8cf53011f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-12-16T10:05:28.000Z">
+<meta property="og:image" content="http://charlsprince.com/2017/12/16/控制单个视图控制器旋转/2925367-fd11c3f8cf53011f.jpg">
+<meta property="og:updated_time" content="2019-05-27T07:59:01.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="控制单个视图控制器旋转">
 <meta name="twitter:description" content="直接控制App屏幕旋转方向：  我们可以直接在General -&amp;gt; Deployment info 里面设置限制app旋转方向，这样子就可以控制允许屏幕旋转哪几种方向了，但这个设置并不能实现所有项目的需求，比如做一下视频相关的app，其他的视图都是不允许横屏的，只有视频那个控制器能够横屏，这个时候你根本可能就没有办法再更改设置里面的内容了，只能通过代码去实现横屏。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2925367-fd11c3f8cf53011f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://charlsprince.com/2017/12/16/控制单个视图控制器旋转/2925367-fd11c3f8cf53011f.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Charls&#39;s Blogs" type="application/atom+xml">
   
@@ -40,7 +40,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -157,7 +157,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-控制单个视图控制器旋转" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-控制单个视图控制器旋转" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -178,19 +178,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="直接控制App屏幕旋转方向："><a href="#直接控制App屏幕旋转方向：" class="headerlink" title="直接控制App屏幕旋转方向："></a>直接控制App屏幕旋转方向：</h3><hr>
-<p><img src="http://upload-images.jianshu.io/upload_images/2925367-fd11c3f8cf53011f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="app 设置屏幕旋转方向.png"></p>
+<p><img src="/2017/12/16/控制单个视图控制器旋转/2925367-fd11c3f8cf53011f.jpg" alt="app 设置屏幕旋转方向.png"></p>
 <p>我们可以直接在General -&gt; Deployment info 里面设置限制app旋转方向，这样子就可以控制允许屏幕旋转哪几种方向了，但这个设置并不能实现所有项目的需求，比如做一下视频相关的app，其他的视图都是不允许横屏的，只有视频那个控制器能够横屏，这个时候你根本可能就没有办法再更改设置里面的内容了，只能通过代码去实现横屏。</p>
 <a id="more"></a>
-<h3 id="代码实现控制屏幕旋转"><a href="#代码实现控制屏幕旋转" class="headerlink" title="代码实现控制屏幕旋转"></a>代码实现控制屏幕旋转</h3><p>iOS6.0 以后就是通过以下三个方法实现横竖屏的控制，在<code>ViewController</code>里面重写三个方法或创建一个该类的类目实现下面三个方法就能实现了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">-(BOOL)shouldAutorotate&#123;</div><div class="line">    return NO;</div><div class="line">&#125;</div><div class="line">- (UIInterfaceOrientationMask)supportedInterfaceOrientations</div><div class="line">&#123;</div><div class="line">    return UIInterfaceOrientationMaskPortrait;</div><div class="line">&#125;</div><div class="line">-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation&#123;</div><div class="line">    return UIInterfaceOrientationPortrait;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="代码实现控制屏幕旋转"><a href="#代码实现控制屏幕旋转" class="headerlink" title="代码实现控制屏幕旋转"></a>代码实现控制屏幕旋转</h3><p>iOS6.0 以后就是通过以下三个方法实现横竖屏的控制，在<code>ViewController</code>里面重写三个方法或创建一个该类的类目实现下面三个方法就能实现了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-(BOOL)shouldAutorotate&#123;</span><br><span class="line">    return NO;</span><br><span class="line">&#125;</span><br><span class="line">- (UIInterfaceOrientationMask)supportedInterfaceOrientations</span><br><span class="line">&#123;</span><br><span class="line">    return UIInterfaceOrientationMaskPortrait;</span><br><span class="line">&#125;</span><br><span class="line">-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation&#123;</span><br><span class="line">    return UIInterfaceOrientationPortrait;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="但是"><a href="#但是" class="headerlink" title="但是"></a>但是</h3><p>  如果你发现你的<code>ViewController</code>里面的 <code>shouldAutorotate</code> 然而并没有执行的时候，不用疑惑它为什么不执行，仔细想一下，它是<code>UIViewController</code>里面的方法，它不执行说明了什么情况呢？没错，就是被别的<code>UIViewController</code>截取了，而方法被截取说明了你这个视图控制器不是单一的<code>UIViewController</code>，它很有可能是被别的继承于<code>UIViewController</code>的类控制了或者说作为了子视图控制器，这个时候你可以检查一下，你的<code>ViewController</code>是不是作为了<code>UINavigationController</code>的<code>RootViewController</code>或者被作为了<code>UITabBarController</code>的子控制器，如果是这样的话，只需要在你项目里面的<code>UINavigationController</code>或<code>UITabBarController</code>添加同样的三个方法就行了</p>
 <blockquote>
 <p><code>UINavigationController</code>基类添加方法：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">-(BOOL)shouldAutorotate&#123;</div><div class="line">    return self.topViewController.shouldAutorotate;</div><div class="line">&#125;</div><div class="line">/**以下两个方法可不写*/</div><div class="line">- (UIInterfaceOrientationMask)supportedInterfaceOrientations</div><div class="line">&#123;</div><div class="line">    return UIInterfaceOrientationMaskAll;</div><div class="line">&#125;</div><div class="line">-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation&#123;</div><div class="line">    returnUIInterfaceOrientationLandscapeRight;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-(BOOL)shouldAutorotate&#123;</span><br><span class="line">    return self.topViewController.shouldAutorotate;</span><br><span class="line">&#125;</span><br><span class="line">/**以下两个方法可不写*/</span><br><span class="line">- (UIInterfaceOrientationMask)supportedInterfaceOrientations</span><br><span class="line">&#123;</span><br><span class="line">    return UIInterfaceOrientationMaskAll;</span><br><span class="line">&#125;</span><br><span class="line">-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation&#123;</span><br><span class="line">    returnUIInterfaceOrientationLandscapeRight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>UITabBarController</code>基类添加方法：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">- (BOOL)shouldAutorotate&#123;</div><div class="line">    return self.selectedViewController.shouldAutorotate;</div><div class="line">&#125;</div><div class="line">/**以下两个方法可不写*/</div><div class="line">- (UIInterfaceOrientationMask)supportedInterfaceOrientations</div><div class="line">&#123;</div><div class="line">    return UIInterfaceOrientationMaskAll;</div><div class="line">&#125;</div><div class="line">-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation&#123;</div><div class="line">    return UIInterfaceOrientationLandscapeRight;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)shouldAutorotate&#123;</span><br><span class="line">    return self.selectedViewController.shouldAutorotate;</span><br><span class="line">&#125;</span><br><span class="line">/**以下两个方法可不写*/</span><br><span class="line">- (UIInterfaceOrientationMask)supportedInterfaceOrientations</span><br><span class="line">&#123;</span><br><span class="line">    return UIInterfaceOrientationMaskAll;</span><br><span class="line">&#125;</span><br><span class="line">-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation&#123;</span><br><span class="line">    return UIInterfaceOrientationLandscapeRight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -476,19 +476,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,7 +544,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

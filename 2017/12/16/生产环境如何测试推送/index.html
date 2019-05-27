@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://charlsPrince.com">
   <title>生产环境如何测试推送 | Charls&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,16 +16,16 @@
 <meta property="og:site_name" content="Charls&#39;s Blogs">
 <meta property="og:description" content="最近在开发项目的时候需要使用到推送，开发环境的推送很好测试，但生产环境的推送测试我以前是打包，然后发布到蒲公英测试，虽然不算麻烦，但每次都要打包有点腻。后来我尝试了一下如何不用打包也能测试生产环境的推送。首先需要在官网上创建一个ad_hoc证书，当然app ID、apple Device和Profile都必不可少，然后打开你开发中的工程，打开app推送设置:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fmis5ye5olj30hl07i751.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fmis836uejj30g005sq3t.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fmisa1lqt0j30kh07ygmc.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fmisb28r9pj30fj06274y.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fmisbli914j30lf0c63zg.jpg">
-<meta property="og:updated_time" content="2017-12-16T10:52:22.000Z">
+<meta property="og:image" content="http://charlsprince.com/2017/12/16/生产环境如何测试推送/006tNc79gy1fmis5ye5olj30hl07i751.jpg">
+<meta property="og:image" content="http://charlsprince.com/2017/12/16/生产环境如何测试推送/006tNc79gy1fmis836uejj30g005sq3t.jpg">
+<meta property="og:image" content="http://charlsprince.com/2017/12/16/生产环境如何测试推送/006tNc79gy1fmisa1lqt0j30kh07ygmc.jpg">
+<meta property="og:image" content="http://charlsprince.com/2017/12/16/生产环境如何测试推送/006tNc79gy1fmisb28r9pj30fj06274y.jpg">
+<meta property="og:image" content="http://charlsprince.com/2017/12/16/生产环境如何测试推送/006tNc79gy1fmisbli914j30lf0c63zg.jpg">
+<meta property="og:updated_time" content="2019-05-27T07:46:26.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生产环境如何测试推送">
 <meta name="twitter:description" content="最近在开发项目的时候需要使用到推送，开发环境的推送很好测试，但生产环境的推送测试我以前是打包，然后发布到蒲公英测试，虽然不算麻烦，但每次都要打包有点腻。后来我尝试了一下如何不用打包也能测试生产环境的推送。首先需要在官网上创建一个ad_hoc证书，当然app ID、apple Device和Profile都必不可少，然后打开你开发中的工程，打开app推送设置:">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fmis5ye5olj30hl07i751.jpg">
+<meta name="twitter:image" content="http://charlsprince.com/2017/12/16/生产环境如何测试推送/006tNc79gy1fmis5ye5olj30hl07i751.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Charls&#39;s Blogs" type="application/atom+xml">
   
@@ -44,7 +44,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -161,7 +161,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-生产环境如何测试推送" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-生产环境如何测试推送" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -182,16 +182,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近在开发项目的时候需要使用到推送，开发环境的推送很好测试，但生产环境的推送测试我以前是打包，然后发布到蒲公英测试，虽然不算麻烦，但每次都要打包有点腻。后来我尝试了一下如何不用打包也能测试生产环境的推送。<br>首先需要在官网上创建一个ad_hoc证书，当然app ID、apple Device和Profile都必不可少，然后打开你开发中的工程，打开app推送设置:</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fmis5ye5olj30hl07i751.jpg" alt="推送设置"></p>
+<p><img src="/2017/12/16/生产环境如何测试推送/006tNc79gy1fmis5ye5olj30hl07i751.jpg" alt="推送设置"></p>
 <a id="more"></a>
 <p>然后在Build Settings选项中的Code Signing Identity中将Release选项改为iOS Distribution,这一步很重要！！！因为API可能是依据这个来判断当前的环境是开发环境还是发布环境，如果这一步没有设置的话是没有办法收到推送的。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fmis836uejj30g005sq3t.jpg" alt="推送设置"></p>
+<p><img src="/2017/12/16/生产环境如何测试推送/006tNc79gy1fmis836uejj30g005sq3t.jpg" alt="推送设置"></p>
 <p>然后再点击你的工程 -&gt; Edit Scheme -&gt; Run -&gt; 选择 Build Configuration -&gt; Release 这一步能为了让你的工程在Release模式下运行</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fmisa1lqt0j30kh07ygmc.jpg" alt="Release模式"></p>
+<p><img src="/2017/12/16/生产环境如何测试推送/006tNc79gy1fmisa1lqt0j30kh07ygmc.jpg" alt="Release模式"></p>
 <p>将General -&gt; Signing 的Release 下的描述文件改成你创建的那个</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fmisb28r9pj30fj06274y.jpg" alt="描述文件"></p>
+<p><img src="/2017/12/16/生产环境如何测试推送/006tNc79gy1fmisb28r9pj30fj06274y.jpg" alt="描述文件"></p>
 <p>这时就可以运行你的项目了，运行过程中可能会提示进程失效了，不用担心，其实你的app已经装到手机上了，如果你用到了第三方推送的话，就可以使用你注册的别名来推送了，没有意外的话应该就能收到推送了，手机忘记截图了囧/(ㄒoㄒ)/~~</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fmisbli914j30lf0c63zg.jpg" alt="推送"></p>
+<p><img src="/2017/12/16/生产环境如何测试推送/006tNc79gy1fmisbli914j30lf0c63zg.jpg" alt="推送"></p>
 
       
 
@@ -477,19 +477,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,7 +545,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

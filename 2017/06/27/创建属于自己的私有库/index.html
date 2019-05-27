@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://charlsPrince.com">
   <title>创建属于自己的私有库 | Charls&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,17 +16,17 @@
 <meta property="og:site_name" content="Charls&#39;s Blogs">
 <meta property="og:description" content="相信每个Developer都会在使用Cocoapods这儿第三方库管理工具，虽然有时候pod install的时候会有种想死的感觉o(╯□╰)o，但依然无法阻挡某些程序员去使用它的热情，why？因为它能使你的项目工程看起来更加简洁，更加有条理性，而不至于使自己项目的Vendor文件夹看起来臃肿，而且能减少手动导入静态framework的麻烦，也可以将自己封装好的代码提交到Trunk供自己和别人使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-92ef309029175f55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-87daf0ce282b7437.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-f5b40d67b17ea557.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-12e0e5035fcfa0d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fgziq673rjj30hx02cjri.jpg">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2925367-a0acab8a91311285.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-11-08T09:33:18.000Z">
+<meta property="og:image" content="http://charlsprince.com/2017/06/27/创建属于自己的私有库/2925367-92ef309029175f55.png">
+<meta property="og:image" content="http://charlsprince.com/2017/06/27/创建属于自己的私有库/2925367-87daf0ce282b7437.png">
+<meta property="og:image" content="http://charlsprince.com/2017/06/27/创建属于自己的私有库/2925367-f5b40d67b17ea557.png">
+<meta property="og:image" content="http://charlsprince.com/2017/06/27/创建属于自己的私有库/2925367-12e0e5035fcfa0d4.png">
+<meta property="og:image" content="http://charlsprince.com/2017/06/27/创建属于自己的私有库/006tKfTcgy1fgziq673rjj30hx02cjri.jpg">
+<meta property="og:image" content="http://charlsprince.com/2017/06/27/创建属于自己的私有库/2925367-a0acab8a91311285.png">
+<meta property="og:updated_time" content="2019-05-27T08:29:53.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建属于自己的私有库">
 <meta name="twitter:description" content="相信每个Developer都会在使用Cocoapods这儿第三方库管理工具，虽然有时候pod install的时候会有种想死的感觉o(╯□╰)o，但依然无法阻挡某些程序员去使用它的热情，why？因为它能使你的项目工程看起来更加简洁，更加有条理性，而不至于使自己项目的Vendor文件夹看起来臃肿，而且能减少手动导入静态framework的麻烦，也可以将自己封装好的代码提交到Trunk供自己和别人使用">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2925367-92ef309029175f55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://charlsprince.com/2017/06/27/创建属于自己的私有库/2925367-92ef309029175f55.png">
   
     <link rel="alternative" href="/atom.xml" title="Charls&#39;s Blogs" type="application/atom+xml">
   
@@ -45,7 +45,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -162,7 +162,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-创建属于自己的私有库" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-创建属于自己的私有库" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -199,9 +199,9 @@
 <p>开源第三方库管理podspec的地方，这个文件夹是在使用Cocoapods的时候自动从<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">Specs</a>上clone到本地的<br>基本目录结构：<br>repos-&gt;master-&gt;Specs-&gt;[Name]-&gt;[Version]-&gt;[Name].podspec</p>
 </blockquote>
 <p>这个就是共有的第三方的目录，我们要做私有库，可以模仿共有库的目录结构，建立一个自己的Spec私有仓库来维护，以后我们要维护的东西基本就两样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. 私有的Specs目录</div><div class="line">2. 我们要上传的库</div></pre></td></tr></table></figure>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="一、创建私有的Specs目录"><a href="#一、创建私有的Specs目录" class="headerlink" title="一、创建私有的Specs目录"></a>一、创建私有的Specs目录</h3><p>在远端(GitHub\其他代码管理服务器，因为我使用的是GitHub，所以下文说到的远端都是指GitHub)建一个仓库，命名为MySpecs,将仓库clone到本地(可以是桌面或指定文件夹下)，将共有的Cocoapods-version.yml文件拷贝到里面，并创建一个命名为“Specs”的文件夹(在文件夹里面随意的文件，只要不是空文件夹就行了，因为如果是空文件夹的话在push到远端的时候会被忽略)，然后推送到远端，就这样，远端的Specs仓库已经创建完成了，这时本地和远端都会有了两个同步的库，如图：<br><img src="http://upload-images.jianshu.io/upload_images/2925367-92ef309029175f55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="本地仓库.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2925367-87daf0ce282b7437.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="远程仓库.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 私有的Specs目录</span><br><span class="line">2. 我们要上传的库</span><br></pre></td></tr></table></figure>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="一、创建私有的Specs目录"><a href="#一、创建私有的Specs目录" class="headerlink" title="一、创建私有的Specs目录"></a>一、创建私有的Specs目录</h3><p>在远端(GitHub\其他代码管理服务器，因为我使用的是GitHub，所以下文说到的远端都是指GitHub)建一个仓库，命名为MySpecs,将仓库clone到本地(可以是桌面或指定文件夹下)，将共有的Cocoapods-version.yml文件拷贝到里面，并创建一个命名为“Specs”的文件夹(在文件夹里面随意的文件，只要不是空文件夹就行了，因为如果是空文件夹的话在push到远端的时候会被忽略)，然后推送到远端，就这样，远端的Specs仓库已经创建完成了，这时本地和远端都会有了两个同步的库，如图：<br><img src="/2017/06/27/创建属于自己的私有库/2925367-92ef309029175f55.png" alt="本地仓库.png"></p>
+<p><img src="/2017/06/27/创建属于自己的私有库/2925367-87daf0ce282b7437.png" alt="远程仓库.png"></p>
 <h3 id="二、将远端的私有Specs仓库clone到本地-cocoapods目录下"><a href="#二、将远端的私有Specs仓库clone到本地-cocoapods目录下" class="headerlink" title="二、将远端的私有Specs仓库clone到本地.cocoapods目录下"></a>二、将远端的私有Specs仓库clone到本地.cocoapods目录下</h3><p>在终端运行：</p>
 <blockquote>
 <p> $ pod repo add MySpecs <a href="https://github.com/CharlsPrince/MySpecs.git" target="_blank" rel="noopener">https://github.com/CharlsPrince/MySpecs.git</a> </p>
@@ -212,9 +212,9 @@
 <p>$ pod spec create CommonExtension <a href="https://github.com/CharlsPrince/CommonExtension.git" target="_blank" rel="noopener">https://github.com/CharlsPrince/CommonExtension.git</a></p>
 </blockquote>
 <p>CommonExtension 指的是这个podspec文件的名字，后面的路径就是这个工程在远端的路径，当然，如果要实现这一步，你需要先将你的工程push到远端，至于怎么push，这里就不详细介绍了，因为如果你使用不同的代码管理服务器方法也不尽相同，执行完了以后你会发现在当前的这个工程文件目录下回出现一个叫CommonExtension.podspec的文件</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2925367-f5b40d67b17ea557.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="podspec文件.png"></p>
+<p><img src="/2017/06/27/创建属于自己的私有库/2925367-f5b40d67b17ea557.png" alt="podspec文件.png"></p>
 <p>用sublime打开这个文件，没有sublime的也可以使用系统自带的文本编辑器打开，只不过用sublime打开可以将编辑语言改成Ruby，这样这些文本就会高亮显示了，编辑podspec里面的信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">s.name = &quot;xxxx&quot; #库的名字</div><div class="line">s.version = &quot;0.0.1&quot; #版本号，当私有库需要更新的时候只要修改这个值，自行维护</div><div class="line">s.summay = &quot;xxxxxx&quot; #库的简介，pod search 显示在上面的介绍</div><div class="line">s.description = &quot;xxxxxxxx&quot; #库的详细描述</div><div class="line">s.homepage = &quot;https://xxxx&quot; #主页地址，pod search 会显示，一般填写仓库的地址就行了</div><div class="line">s.license = &quot;MIT&quot; #开源协议，项目文件目录下需要有一个MIT开源协议文件</div><div class="line">s.author = &#123; &quot;name&quot; =&gt; &quot;xxxxxx@qq.com&quot; &#125; #作者名字、邮箱</div><div class="line">s.platform = :ios, &quot;7.0&quot; #库最低支持的系统版本</div><div class="line">s.source = &#123; :git =&gt; &quot;https://github.com/CharlsPrince/CommonExtension.git&quot;, :tag =&gt; &quot;#&#123;s.version&#125;&quot; &#125; #资源地址，pod install 的时候会根据这个地址去下载你的想要库，以及下载的版本，必须要跟s.version一致。</div><div class="line">s.source_files = &quot;xxxx&quot; #这个很重要，指定资源文件，前缀就是.podspec文件当前路径，只用写之后的路径，如Class/*是指Class文件夹下的所有文件，但不包括子文件夹里面的文件、Class/**/*是指包含所有Class文件夹下的文件，包括子文件、Class/**/*.&#123;h,m&#125;是指包含所有Class文件夹下的后缀为.h或.m的文件，当然也可以指定文件。</div><div class="line">s.requires_arc = true #是否支持arc</div><div class="line">&gt;&gt;&gt;&gt;&gt;以下是可选描述&lt;&lt;&lt;&lt;&lt;</div><div class="line">#s.resource  = &quot;icon.png&quot; #资源文件，包括图片和xib文件</div><div class="line"># s.dependency &quot;JSONKit&quot;, &quot;~&gt; 1.4&quot; #需要依赖的三方库</div><div class="line">#s.framework  = &quot;SomeFramework&quot; #需要依赖的框架</div><div class="line">#s.public_header_files = &apos;&apos; #公开的头文件，如果不没公开，用户在用的时候可能引不到响应的头文件</div><div class="line">s.subspec &apos;subFolder&apos; do |ss|</div><div class="line">    ss.source_files = &apos;Class/xxx/**/*.&#123;h,m&#125;&apos;</div><div class="line">    ss.public_header_files = &quot;Class/xxx/**/*.&#123;h&#125;&quot;</div><div class="line">end   #这个是子依赖库，因为如果我们只是用s.source_files来指定文件，那么用户在pod下来之后所有的文件都在同一个目录下，没有子文件夹，如果想要分下类，用s.subspec，每一个subspec可以分一个子文件夹，但是记得一定要将.h文件通过ss.public_header_files公开，不然有可能会找不到头文件。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">s.name = &quot;xxxx&quot; #库的名字</span><br><span class="line">s.version = &quot;0.0.1&quot; #版本号，当私有库需要更新的时候只要修改这个值，自行维护</span><br><span class="line">s.summay = &quot;xxxxxx&quot; #库的简介，pod search 显示在上面的介绍</span><br><span class="line">s.description = &quot;xxxxxxxx&quot; #库的详细描述</span><br><span class="line">s.homepage = &quot;https://xxxx&quot; #主页地址，pod search 会显示，一般填写仓库的地址就行了</span><br><span class="line">s.license = &quot;MIT&quot; #开源协议，项目文件目录下需要有一个MIT开源协议文件</span><br><span class="line">s.author = &#123; &quot;name&quot; =&gt; &quot;xxxxxx@qq.com&quot; &#125; #作者名字、邮箱</span><br><span class="line">s.platform = :ios, &quot;7.0&quot; #库最低支持的系统版本</span><br><span class="line">s.source = &#123; :git =&gt; &quot;https://github.com/CharlsPrince/CommonExtension.git&quot;, :tag =&gt; &quot;#&#123;s.version&#125;&quot; &#125; #资源地址，pod install 的时候会根据这个地址去下载你的想要库，以及下载的版本，必须要跟s.version一致。</span><br><span class="line">s.source_files = &quot;xxxx&quot; #这个很重要，指定资源文件，前缀就是.podspec文件当前路径，只用写之后的路径，如Class/*是指Class文件夹下的所有文件，但不包括子文件夹里面的文件、Class/**/*是指包含所有Class文件夹下的文件，包括子文件、Class/**/*.&#123;h,m&#125;是指包含所有Class文件夹下的后缀为.h或.m的文件，当然也可以指定文件。</span><br><span class="line">s.requires_arc = true #是否支持arc</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;以下是可选描述&lt;&lt;&lt;&lt;&lt;</span><br><span class="line">#s.resource  = &quot;icon.png&quot; #资源文件，包括图片和xib文件</span><br><span class="line"># s.dependency &quot;JSONKit&quot;, &quot;~&gt; 1.4&quot; #需要依赖的三方库</span><br><span class="line">#s.framework  = &quot;SomeFramework&quot; #需要依赖的框架</span><br><span class="line">#s.public_header_files = &apos;&apos; #公开的头文件，如果不没公开，用户在用的时候可能引不到响应的头文件</span><br><span class="line">s.subspec &apos;subFolder&apos; do |ss|</span><br><span class="line">    ss.source_files = &apos;Class/xxx/**/*.&#123;h,m&#125;&apos;</span><br><span class="line">    ss.public_header_files = &quot;Class/xxx/**/*.&#123;h&#125;&quot;</span><br><span class="line">end   #这个是子依赖库，因为如果我们只是用s.source_files来指定文件，那么用户在pod下来之后所有的文件都在同一个目录下，没有子文件夹，如果想要分下类，用s.subspec，每一个subspec可以分一个子文件夹，但是记得一定要将.h文件通过ss.public_header_files公开，不然有可能会找不到头文件。</span><br></pre></td></tr></table></figure>
 <p>当然还有一些其他的，详细介绍可以去Cocoapods看看或可以看看AFNetworking的podspec，他们写得很正规和简洁。</p>
 <h3 id="四、验证podspec合法性"><a href="#四、验证podspec合法性" class="headerlink" title="四、验证podspec合法性"></a>四、验证podspec合法性</h3><p>如果终端是在项目的当前目录下就直接执行一下命令，否则你需要cd到你要验证的.podspec的文件目录下：</p>
 <blockquote>
@@ -230,9 +230,9 @@
 <li>执行完，如果有错就根据错误修改podspec文件，通过则继续</li>
 <li>基本通过的话你就直接可以使用这个库了,可以创建一个工程试验一下，在这个新建个工程里面新建一个Podfile文件并输入</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pod &apos;[Name]&apos;, :podspec =&gt; &apos;/Users/xxxx/Desktop/xxx/xxx.podspec&apos;</div><div class="line"></div><div class="line">注：[Name]为pod spec中的s.name，必须一致，后面的路径为本地pod spec文件的路径。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pod &apos;[Name]&apos;, :podspec =&gt; &apos;/Users/xxxx/Desktop/xxx/xxx.podspec&apos;</span><br><span class="line"></span><br><span class="line">注：[Name]为pod spec中的s.name，必须一致，后面的路径为本地pod spec文件的路径。</span><br></pre></td></tr></table></figure>
 <ul>
-<li>然后cd到这个Podfile的目录下执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pod install</div><div class="line">或</div><div class="line">pod install --no-repo-update</div></pre></td></tr></table></figure>
+<li>然后cd到这个Podfile的目录下执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pod install</span><br><span class="line">或</span><br><span class="line">pod install --no-repo-update</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>第二条命令是不更新官方Specs至本地，速度要比第一条快，没有必要每次都更新官方的Specs，这会使人崩溃。<br>不出意外的话打开你这个工程，你会发现工程已经引入这个库了</p>
@@ -240,19 +240,19 @@
 <blockquote>
 <p>$ git tag “0.0.1”<br>$ git push origin –tags</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/2925367-12e0e5035fcfa0d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="远端tag.png"></p>
+<p><img src="/2017/06/27/创建属于自己的私有库/2925367-12e0e5035fcfa0d4.png" alt="远端tag.png"></p>
 <p>将tag推送到远端以后，向自己的私有库提交podspec文件：</p>
 <blockquote>
 <p>$ pod repo push MySpecs [name].podspec</p>
 </blockquote>
 <p>如果提交成功，去<code>~/.cocoapods/repos/MySpecs</code>文件夹下就能找到你创建的私有库了，当然，只是podspec文件哦，因为<code>~/.cocoapods/repos/</code>只是用来保存podspec文件的嘛</p>
 <h4 id="到这，你的私有库就已经创建完成了"><a href="#到这，你的私有库就已经创建完成了" class="headerlink" title="到这，你的私有库就已经创建完成了"></a>到这，你的私有库就已经创建完成了</h4><h4 id="问题小结"><a href="#问题小结" class="headerlink" title="问题小结"></a>问题小结</h4><p>1、执行pod lib create （组件库） 出错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">提示错误：rubygems/core_ext/kernel_require.rb:120:in `require&apos;: cannot load such file -- colored2  </div><div class="line">         (LoadError)</div><div class="line"></div><div class="line"> 解决办法：</div><div class="line">     输入上面提示的colored2的两条gem命令即可解决问题</div><div class="line">   sudo gem install colored2</div><div class="line">   sudo gem update --system</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">提示错误：rubygems/core_ext/kernel_require.rb:120:in `require&apos;: cannot load such file -- colored2  </span><br><span class="line">         (LoadError)</span><br><span class="line"></span><br><span class="line"> 解决办法：</span><br><span class="line">     输入上面提示的colored2的两条gem命令即可解决问题</span><br><span class="line">   sudo gem install colored2</span><br><span class="line">   sudo gem update --system</span><br></pre></td></tr></table></figure>
 <p>2、添加组件库到私有spec repo仓库后 执行 pod search搜索不到。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">方法一：</div><div class="line">        先确认你本地仓库上面确实有你新创建的组件库，这时候可以先删除search缓存文件</div><div class="line">    rm ~/Library/Caches/CocoaPods/search_index.json</div><div class="line">    ,删除后从新执行pod search ***</div><div class="line"></div><div class="line">    方法二：</div><div class="line">    1.切换到某个项目（含有podfile文件）下</div><div class="line">    2.执行pod update（提示不能更新）</div><div class="line">    3.尝试 pod repo update —verbose获取详细信息，我记得是提示我删除一个 index.lock文件，</div><div class="line">4.删除后从新 执行  pod repo update —verbose  会更新本地私有库和master仓库</div><div class="line">5.执行pod search ***   创建search索引，可以搜到</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">方法一：</span><br><span class="line">        先确认你本地仓库上面确实有你新创建的组件库，这时候可以先删除search缓存文件</span><br><span class="line">    rm ~/Library/Caches/CocoaPods/search_index.json</span><br><span class="line">    ,删除后从新执行pod search ***</span><br><span class="line"></span><br><span class="line">    方法二：</span><br><span class="line">    1.切换到某个项目（含有podfile文件）下</span><br><span class="line">    2.执行pod update（提示不能更新）</span><br><span class="line">    3.尝试 pod repo update —verbose获取详细信息，我记得是提示我删除一个 index.lock文件，</span><br><span class="line">4.删除后从新 执行  pod repo update —verbose  会更新本地私有库和master仓库</span><br><span class="line">5.执行pod search ***   创建search索引，可以搜到</span><br></pre></td></tr></table></figure>
 <p>3、提交本地podspec到Specs仓库的时候出错，提示repo 文件夹下的spec repo is not clean</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">方法一: cd到spec repo 文件夹下，执行 git  clean -f</div><div class="line">方法二：cd到spec repo 文件夹下，执行  git  stash</div><div class="line">方法三: 删除spec repo 下的Specs仓库，我这里的是“MySpecs”,然后重新从git上将私有仓库clone下来：</div><div class="line">pod repo add MySpecs https://github.com/CharlsPrince/MySpecs.git</div></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fgziq673rjj30hx02cjri.jpg" alt="the repo &quot;xxx&quot; at &quot;xxx&quot; is no clean"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">方法一: cd到spec repo 文件夹下，执行 git  clean -f</span><br><span class="line">方法二：cd到spec repo 文件夹下，执行  git  stash</span><br><span class="line">方法三: 删除spec repo 下的Specs仓库，我这里的是“MySpecs”,然后重新从git上将私有仓库clone下来：</span><br><span class="line">pod repo add MySpecs https://github.com/CharlsPrince/MySpecs.git</span><br></pre></td></tr></table></figure>
+<p><img src="/2017/06/27/创建属于自己的私有库/006tKfTcgy1fgziq673rjj30hx02cjri.jpg" alt="the repo &quot;xxx&quot; at &quot;xxx&quot; is no clean"></p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h2><ul>
 <li>每次提交本地podspec到Specs仓库都要将Specs提交到git远程服务器，确保本地仓库与远程仓库同步</li>
 </ul>
@@ -272,7 +272,7 @@
 <blockquote>
 <p>pod ‘xxx’, :podspec =&gt; ‘xxxx.podspec’</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/2925367-a0acab8a91311285.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="pod search.png"></p>
+<p><img src="/2017/06/27/创建属于自己的私有库/2925367-a0acab8a91311285.png" alt="pod search.png"></p>
 <p>看到这个界面是不是有点小激动？之前弄的时候踩了不少坑，希望大家不要像我一样踩坑了！！！花了差不多一个下午时间才整理出来，希望能帮到同学们，谢谢，喜欢的点个👍。</p>
 
       
@@ -563,19 +563,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,7 +631,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
