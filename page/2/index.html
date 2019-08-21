@@ -161,6 +161,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-安装HomeBrew" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/安装HomeBrew/">安装HomeBrew</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/安装HomeBrew/" class="archive-article-date">
+  	<time datetime="2019-03-13T03:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="noopener">HomeBrew官网</a></p>
+<p>HomeBrew 是 Mac OSX 上的软件包管理工具，能在Mac上便捷的安装软件和卸载软件，类似于Ubuntu的apt-get</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+<p>将以上命令粘贴至终端。</p>
+<p>更新Homebrew的package数据库: brew update</p>
+<p>搜索软件：brew search 软件名，如brew search wget</p>
+<p>安装软件：brew install 软件名，如brew install wget</p>
+<p>卸载软件：brew remove 软件名，如brew remove wget</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">HomeBrew</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/安装HomeBrew/">阅读全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-非缓存方法加载图片" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -444,59 +510,6 @@
 
 
   
-    <article id="post-nodejs调试程序" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/nodejs调试程序/">nodejs调试程序</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/13/nodejs调试程序/" class="archive-article-date">
-  	<time datetime="2019-03-13T03:43:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Chrome-DevTools"><a href="#Chrome-DevTools" class="headerlink" title="Chrome DevTools"></a>Chrome DevTools</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">首先在命令行输入 node --inspect ./bin/www</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>访问 <code>chrome://inspect</code>, 点击配置按钮，确保 Host 和 Port 对应</p>
-<p>访问元信息中(<a href="http://127.0.0.1:9229/json)的" target="_blank" rel="noopener">http://127.0.0.1:9229/json)的</a> devtoolsFrontendUrl</p>
-<p>Chrome 打开连接 (<a href="http://127.0.0.1:9229" target="_blank" rel="noopener">http://127.0.0.1:9229</a>) 然后使用 cmmand+option+i 快速打开开发者工具，点击绿色小图标</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/13/nodejs调试程序/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -593,19 +606,27 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CMMI5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS-SDK</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CMMI5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,22 +639,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS-SDK</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">LLDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -650,6 +655,18 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Runtime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">LLDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片压缩</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -713,11 +730,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">链式编程</a>
+                <a href="javascript:void(0)" class="js-tag color3">图片</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图片</a>
+                <a href="javascript:void(0)" class="js-tag color5">链式编程</a>
               </li>
             
             <div class="clearfix"></div>
