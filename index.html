@@ -161,6 +161,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS比较屏幕高度与页面高度" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/21/JS比较屏幕高度与页面高度/">JS比较屏幕高度与页面高度</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/21/JS比较屏幕高度与页面高度/" class="archive-article-date">
+  	<time datetime="2019-08-21T06:58:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 计算页面高度，如果页面高度不超过屏幕高度，则页面高度设置为屏幕高度</span><br><span class="line">document.documentElement.style.backgroundColor = &quot;#fff&quot;;</span><br><span class="line">this.screenH = window.screen.availHeight;</span><br><span class="line">this.pageH = document.documentElement.offsetHeight;</span><br><span class="line">if (this.pageH &lt; this.screenH) &#123;</span><br><span class="line">    document.documentElement.style.height = this.screenH + &quot;px&quot;;</span><br><span class="line">    document.documentElement.scrollTop = &apos;0&apos;;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    document.documentElement.style.height = &apos;auto&apos;;</span><br><span class="line">    document.documentElement.scrollTop = &apos;0&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 获取浏览器窗口的可视区域的宽度</span><br><span class="line">function getViewPortWidth() &#123;</span><br><span class="line">      return document.documentElement.clientWidth || document.body.clientWidth;</span><br><span class="line">  &#125;</span><br><span class="line">   </span><br><span class="line">// 获取浏览器窗口的可视区域的高度</span><br><span class="line">function getViewPortHeight() &#123;</span><br><span class="line">      return document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">// 获取浏览器窗口水平滚动条的位置</span><br><span class="line">function getScrollLeft() &#123;</span><br><span class="line">     return document.documentElement.scrollLeft || document.body.scrollLeft;</span><br><span class="line"> &#125;</span><br><span class="line">  </span><br><span class="line">// 获取浏览器窗口垂直滚动条的位置</span><br><span class="line">function getScrollTop() &#123;</span><br><span class="line">     return document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>网页可见区域宽： document.body.offsetWidth (包括边线的宽)<br>网页可见区域高： document.body.offsetHeight (包括边线的高)</p>
+<p>网页正文部分上： window.screenTop<br>网页正文部分左： window.screenLeft</p>
+<p>屏幕分辨率的高： window.screen.height<br>屏幕分辨率的宽： window.screen.width</p>
+<p>屏幕可用工作区高度： window.screen.availHeight<br>屏幕可用工作区宽度： window.screen.availWidth</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">屏幕高度</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">页面高度</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/21/JS比较屏幕高度与页面高度/">阅读全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-配置多个ssh-key" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -440,77 +512,6 @@
 
 
   
-    <article id="post-非缓存方法加载图片" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/非缓存方法加载图片/">非缓存方法加载图片</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/13/非缓存方法加载图片/" class="archive-article-date">
-  	<time datetime="2019-03-13T03:53:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>读取工程内图片资源Apple官方文档提供了两种方法生成UIImage对象</p>
-<ol>
-<li>imageNamed:</li>
-<li>imageWithContentsOfFile:</li>
-<li>dataWithContentsOfFile: + imageWithData: (类同2)</li>
-</ol>
-<p>区别:</p>
-<p>imageNamed: 会现在系统缓存中根据指定的图片名字寻找图片，如果缓存中存在，则直接在缓存中返回，如果缓存不存在，则会从指定的文件中加载图片数据并将其缓存起来。常使用在图片较小且图片加载频率较高的地方。</p>
-<p>imageWithContentsOfFile: 仅加载图片，图片数据不会被缓存，图片会被系统以数据方式加载到程序，对于较大的图片以及使用频率较低的情况可以使用该方法，降低内存消耗。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">图片</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/13/非缓存方法加载图片/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -607,14 +608,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">总结</a>
               </li>
              
@@ -623,7 +616,31 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">混合开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Cordova</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">屏幕高度</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">页面高度</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS-SDK</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,11 +652,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS-SDK</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -656,6 +669,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,14 +733,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sublimeText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
             
             <div class="clearfix"></div>
