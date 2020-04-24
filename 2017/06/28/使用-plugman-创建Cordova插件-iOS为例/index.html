@@ -5,36 +5,36 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://charlsPrince.com">
+  <link rel="dns-prefetch" href="https://caisi_inn.gitee.io">
   <title>使用 plugman 创建Cordova插件-iOS为例 | Charls&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="准备工作 安装 node.js 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。">
 <meta name="keywords" content="混合开发,Cordova,iOS,自定义插件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 plugman 创建Cordova插件-iOS为例">
-<meta property="og:url" content="http://charlsPrince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/index.html">
+<meta property="og:url" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/index.html">
 <meta property="og:site_name" content="Charls&#39;s Blogs">
 <meta property="og:description" content="准备工作 安装 node.js 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-b9603e835d314770.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-dbb4d5fb943e1379.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-9efd0c08ff00c125.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-f16b19b3f191a00f.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-97b40f59672f3e32.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-ade221c02ba54734.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-5b7701bf5824f71f.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-6dd4b341efd6a3e9.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-d049b9a15572f7fc.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-90f671cc77e43ee7.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-f3fa5458e6274cec.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-4dfcbc3c3fc7c8fd.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-517dbbb270f40ee2.jpg">
-<meta property="og:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-65b71ee91749bf77.gif">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-b9603e835d314770.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-dbb4d5fb943e1379.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-9efd0c08ff00c125.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-f16b19b3f191a00f.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-97b40f59672f3e32.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-ade221c02ba54734.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-5b7701bf5824f71f.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-6dd4b341efd6a3e9.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-d049b9a15572f7fc.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-90f671cc77e43ee7.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-f3fa5458e6274cec.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-4dfcbc3c3fc7c8fd.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-517dbbb270f40ee2.jpg">
+<meta property="og:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-65b71ee91749bf77.gif">
 <meta property="og:updated_time" content="2019-05-27T08:25:22.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 plugman 创建Cordova插件-iOS为例">
 <meta name="twitter:description" content="准备工作 安装 node.js 主要使用了node.js 的包管理工具npm，这个笔者就不详细介绍了，相信作为一个开发者，不管前后端对这个东西都不会说完全不认识。">
-<meta name="twitter:image" content="http://charlsprince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-b9603e835d314770.jpg">
+<meta name="twitter:image" content="https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/2925367-b9603e835d314770.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Charls&#39;s Blogs" type="application/atom+xml">
   
@@ -372,7 +372,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://charlsPrince.com/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://caisi_inn.gitee.io/2017/06/28/使用-plugman-创建Cordova插件-iOS为例/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -521,6 +521,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS-SDK</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">屏幕高度</a>
               </li>
              
@@ -533,23 +541,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS-SDK</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">LLDB</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,11 +637,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">链式编程</a>
+                <a href="javascript:void(0)" class="js-tag color3">图片</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图片</a>
+                <a href="javascript:void(0)" class="js-tag color5">链式编程</a>
               </li>
             
             <div class="clearfix"></div>
